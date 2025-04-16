@@ -110,3 +110,16 @@ home-component[hidden] {
       color: #fff;
     }
 }
+
+.profile-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+img.profilePic {
+  background: #bcbaba;
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
+}
