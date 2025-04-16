@@ -71,6 +71,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     nextSteps: ko.Observable<number> = ko.observable(1);
     keyAttribute: ko.Observable<string>;
     pushArrayName: ko.Observable<string>;
+    selectedEvent: ko.Observable<string>;
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
         //At the start of your viewModel constructor
@@ -91,6 +92,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.res = componentStrings["chat-component"];
         this.keyAttribute = ko.observable("")
         this.pushArrayName = ko.observable("")
+        this.selectedEvent = ko.observable("")
 
         this.messages = ko.observableArray<{
             user: string;
@@ -176,69 +178,71 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             // window.open("http://10.26.1.52:5150/", "_blank"); // open in new tab
 
         } else {
+            console.log(this.messages.length);
 
             let event = new CustomEvent("chatOpen", {
-                detail: { flag: false },
+                detail: { flag: true },
                 bubbles: true
             });
             this.composite.dispatchEvent(event);
+            this.selectedEvent(param)
 
-            if (param) {
-                const payloadData = this.payload()[0];
-                if (payloadData) {
-                    payloadData.currentStep = this.nextSteps();
-                    payloadData.selectedValues.action = param
-                    this.payload.valueHasMutated();
-                }
-                this.getIntialContent();
-            }
+            // if (param) {
+            //     const payloadData = this.payload()[0];
+            //     if (payloadData) {
+            //         payloadData.currentStep = this.nextSteps();
+            //         payloadData.selectedValues.action = param
+            //         this.payload.valueHasMutated();
+            //     }
+            //     // this.getIntialContent();
+            // }
 
         }
 
 
     }
 
-    getIntialContent = async () => {
+    // getIntialContent = async () => {
 
-        // let finalResponse =
-
-
-        this.loader(true);
-
-        try {
-            const response = await fetch("http://10.26.1.52:5003/process", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(this.payload()[0]),
-            });
-
-            if (!response.ok) {
-                throw new Error(`Server error: ${response.status} ${response.statusText}`);
-            }
-
-            let finalResponse;
-            try {
-                finalResponse = await response.json();
-
-                this.keyAttribute(finalResponse?.TableKeyAttributes)
-                this.pushArrayName(finalResponse?.push_array_name)
+    //     // let finalResponse =
 
 
-                this.nextSteps(finalResponse.nextStep);
-            } catch (jsonError) {
-                throw new Error("Invalid JSON response from server.");
-            }
+    //     this.loader(true);
 
-            // Add bot's response to chat
-            this.messages.push(finalResponse);
+    //     try {
+    //         const response = await fetch("http://10.26.1.52:5003/process", {
+    //             method: "POST",
+    //             headers: { "Content-Type": "application/json" },
+    //             body: JSON.stringify(this.payload()[0]),
+    //         });
 
-        } catch (error) {
-            console.error("Error sending query:", error);
-        } finally {
-            this.loader(false);
-            this.scrollToBottom();
-        }
-    };
+    //         if (!response.ok) {
+    //             throw new Error(`Server error: ${response.status} ${response.statusText}`);
+    //         }
+
+    //         let finalResponse;
+    //         try {
+    //             finalResponse = await response.json();
+
+    //             this.keyAttribute(finalResponse?.TableKeyAttributes)
+    //             this.pushArrayName(finalResponse?.push_array_name)
+
+
+    //             this.nextSteps(finalResponse.nextStep);
+    //         } catch (jsonError) {
+    //             throw new Error("Invalid JSON response from server.");
+    //         }
+
+    //         // Add bot's response to chat
+    //         this.messages.push(finalResponse);
+
+    //     } catch (error) {
+    //         console.error("Error sending query:", error);
+    //     } finally {
+    //         this.loader(false);
+    //         this.scrollToBottom();
+    //     }
+    // };
 
     handleChipClick = (event: any): void => {
         const clickedButton = event.target as HTMLElement;
@@ -373,7 +377,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         const payloadData = this.payload()[0];
         payloadData.UserPrompt = query;
         payloadData.currentStep = this.nextSteps()
-        this.getIntialContent()
+        //this.getIntialContent()
     };
 
     setupEventListeners(element: Element) {

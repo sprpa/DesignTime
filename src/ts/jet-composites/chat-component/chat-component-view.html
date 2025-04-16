@@ -1,4 +1,4 @@
-<div class="mobile-menu-wrap for-mobile">
+<!-- <div class="mobile-menu-wrap for-mobile">
 
   <div class="mobile-menu">
     <span id="menu-toggle" class="menu-btn"> <img src="../../../assets/images/toogle-menu.png" alt="menu"
@@ -14,197 +14,476 @@
   </div>
 
 
-</div>
+</div> -->
 
+<oj-bind-if test="[[selectedEvent()]]">
+  <div id="sidebar" class="sidebar-mobile" class="{'menu-visible': isMenuVisible()}">
 
-<div id="sidebar" class="sidebar-mobile" class="{'menu-visible': isMenuVisible()}">
-
-  <div class="sidebar-inner">
-
-    <div class="top-pro-close">
-
-      <div class="profile-img-m">
-        <img src="../../../assets/images/mobile-profile.svg" alt="User">
+    <div class="sidebar-inner">
+  
+      <div class="top-pro-close">
+  
+        <div class="profile-img-m">
+          <img src="../../../assets/images/mobile-profile.svg" alt="User">
+        </div>
+  
+        <button id="close-btn" class="cl-btn" on-click="[[closeMenu]]">
+          <img src="../../../assets/images/close.png" alt="close">
+        </button>
+  
       </div>
-
-      <button id="close-btn" class="cl-btn" on-click="[[closeMenu]]">
-        <img src="../../../assets/images/close.png" alt="close">
-      </button>
-
-    </div>
-
-    <ul class="menu">
-
-      <li class="submenu menu-list"><a href="#">
-          <!-- <img src="../../../assets/images/Home-icon.svg" alt="home" class="icon-normal hme-icn"> -->
-          <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 11.917 13.157">
-            <g id="home" transform="translate(0.375 0.375)">
-              <path id="Path_352535" data-name="Path 352535"
-                d="M3,6.343,8.583,2l5.583,4.343v6.824a1.241,1.241,0,0,1-1.241,1.241H4.241A1.241,1.241,0,0,1,3,13.167Z"
-                transform="translate(-3 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="0.75" />
-              <path id="Path_352536" data-name="Path 352536" d="M9,18.2V12h3.722v6.2"
-                transform="translate(-5.278 -5.796)" fill="none" stroke="#000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="0.75" />
-            </g>
-          </svg>
-          <span>Home</span></a>
-      </li>
-      <li class="submenu menu-list">
-        <a href="#" on-click="[[() => toggleSubmenu('chat')]]">
-          <!-- <img src="../../../assets/images/chat.svg" alt="CHAT" class="icon-normal"> -->
-         
-          <svg id="Group_1686566517" class="chat-icon" data-name="Group 1686566517" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-            <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0"/>
-            <g id="Group_163980" data-name="Group 163980" transform="translate(5.459 5.459)" width="30" height="30">
-              <path id="message-square" d="M16.082,11.721a1.454,1.454,0,0,1-1.454,1.454H5.907L3,16.082V4.454A1.454,1.454,0,0,1,4.454,3H14.628a1.454,1.454,0,0,1,1.454,1.454Z" transform="translate(-3 -3)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-              <line id="Line_9113" data-name="Line 9113" x2="7" transform="translate(3.041 3.041)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
-              <line id="Line_9114" data-name="Line 9114" x2="4" transform="translate(3.041 6.041)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
-            </g>
-          </svg>
-          <span>Chat</span>
-         
-        </a>
-        <oj-bind-if test="[[activeSubmenu() === 'chat']]">
-          <ul class="submenu-content ">
-            <!-- <div class="icon-right" on-click="[[() => toggleSubmenu(null)]]">
-                <img src="../../../assets/images/arrow-back.svg" alt="back">
-              </div> -->
-            <div class="chat-inner">
-              <h5>
-                Chat Sessions
-              </h5>
-              <div class="chat-details">
-                <div class="chatsub-heading">
-                  Last 7 Days
-                </div>
-                <div class="list-history">
-                  <div class="left-text">UX meeting</div>
-                  <div class="left-text">23 Dec 2024</div>
-                </div>
-                <div class="list-history">
-                  <div class="left-text">UX meeting</div>
-                  <div class="left-text">23 Dec 2024</div>
-                </div>
-                <div class="list-history">
-                  <div class="left-text">UX meeting</div>
-                  <div class="left-text">23 Dec 2024</div>
-                </div>
-                <div class="list-history">
-                  <div class="left-text">UX meeting</div>
-                  <div class="left-text">23 Dec 2024</div>
-                </div>
-                <div class="list-history">
-                  <div class="left-text">UX meeting</div>
-                  <div class="left-text">23 Dec 2024</div>
-                </div>
-                <div class="list-history">
-                  <div class="left-text">UX meeting</div>
-                  <div class="left-text">23 Dec 2024</div>
-                </div>
-                <div class="list-history">
-                  <div class="left-text">UX meeting</div>
-                  <div class="left-text">23 Dec 2024</div>
+  
+      <ul class="menu">
+  
+        <li class="submenu menu-list"><a href="#">
+            <!-- <img src="../../../assets/images/Home-icon.svg" alt="home" class="icon-normal hme-icn"> -->
+            <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 11.917 13.157">
+              <g id="home" transform="translate(0.375 0.375)">
+                <path id="Path_352535" data-name="Path 352535"
+                  d="M3,6.343,8.583,2l5.583,4.343v6.824a1.241,1.241,0,0,1-1.241,1.241H4.241A1.241,1.241,0,0,1,3,13.167Z"
+                  transform="translate(-3 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="0.75" />
+                <path id="Path_352536" data-name="Path 352536" d="M9,18.2V12h3.722v6.2"
+                  transform="translate(-5.278 -5.796)" fill="none" stroke="#000" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.75" />
+              </g>
+            </svg>
+            <span>Home</span></a>
+        </li>
+        <li class="submenu menu-list">
+          <a href="#" on-click="[[() => toggleSubmenu('chat')]]">
+            <!-- <img src="../../../assets/images/chat.svg" alt="CHAT" class="icon-normal"> -->
+  
+            <svg id="Group_1686566517" class="chat-icon" data-name="Group 1686566517" xmlns="http://www.w3.org/2000/svg"
+              width="30" height="30" viewBox="0 0 24 24">
+              <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0" />
+              <g id="Group_163980" data-name="Group 163980" transform="translate(5.459 5.459)" width="30" height="30">
+                <path id="message-square"
+                  d="M16.082,11.721a1.454,1.454,0,0,1-1.454,1.454H5.907L3,16.082V4.454A1.454,1.454,0,0,1,4.454,3H14.628a1.454,1.454,0,0,1,1.454,1.454Z"
+                  transform="translate(-3 -3)" fill="none" stroke="#333" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1" />
+                <line id="Line_9113" data-name="Line 9113" x2="7" transform="translate(3.041 3.041)" fill="none"
+                  stroke="#000" stroke-linecap="round" stroke-width="1" />
+                <line id="Line_9114" data-name="Line 9114" x2="4" transform="translate(3.041 6.041)" fill="none"
+                  stroke="#000" stroke-linecap="round" stroke-width="1" />
+              </g>
+            </svg>
+            <span>Chat</span>
+  
+          </a>
+          <oj-bind-if test="[[activeSubmenu() === 'chat']]">
+            <ul class="submenu-content ">
+              <!-- <div class="icon-right" on-click="[[() => toggleSubmenu(null)]]">
+                  <img src="../../../assets/images/arrow-back.svg" alt="back">
+                </div> -->
+              <div class="chat-inner">
+                <h5>
+                  Chat Sessions
+                </h5>
+                <div class="chat-details">
+                  <div class="chatsub-heading">
+                    Last 7 Days
+                  </div>
+                  <div class="list-history">
+                    <div class="left-text">UX meeting</div>
+                    <div class="left-text">23 Dec 2024</div>
+                  </div>
+                  <div class="list-history">
+                    <div class="left-text">UX meeting</div>
+                    <div class="left-text">23 Dec 2024</div>
+                  </div>
+                  <div class="list-history">
+                    <div class="left-text">UX meeting</div>
+                    <div class="left-text">23 Dec 2024</div>
+                  </div>
+                  <div class="list-history">
+                    <div class="left-text">UX meeting</div>
+                    <div class="left-text">23 Dec 2024</div>
+                  </div>
+                  <div class="list-history">
+                    <div class="left-text">UX meeting</div>
+                    <div class="left-text">23 Dec 2024</div>
+                  </div>
+                  <div class="list-history">
+                    <div class="left-text">UX meeting</div>
+                    <div class="left-text">23 Dec 2024</div>
+                  </div>
+                  <div class="list-history">
+                    <div class="left-text">UX meeting</div>
+                    <div class="left-text">23 Dec 2024</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </ul>
-        </oj-bind-if>
-        <div class="submenu-list">
-          <div>Dashboard</div>
-          <div>Contacts</div>
-          <div>Leads</div>
-          <div>Deals</div>
-          <div>Reports</div>
-        </div>
-      </li>
-
-      <li class="submenu menu-list"><a href="#">
-          <!-- <img src="../../../assets/images/crm.svg" alt="CRM" class="icon-normal"> -->
-          <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20">
-            <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0"/>
-            <g id="Icon_akar-people-group" data-name="Icon akar-people-group" transform="translate(3.969 4.332)">
-              <path id="Path_426412" data-name="Path 426412" d="M16.256,22.394l-.363-2.9A1.7,1.7,0,0,0,14.205,18H12.956a1.7,1.7,0,0,0-1.687,1.49l-.363,2.9a1.134,1.134,0,0,0,1.126,1.274h3.1a1.134,1.134,0,0,0,1.125-1.274Z" transform="translate(-7.55 -12.332)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"/>
-              <path id="Path_426413" data-name="Path 426413" d="M16.9,4.7A1.7,1.7,0,1,1,15.2,3,1.7,1.7,0,0,1,16.9,4.7Z" transform="translate(-9.17 -3)" fill="none" stroke="#000" stroke-width="0.75"/>
-              <path id="Path_426414" data-name="Path 426414" d="M5.267,11.634A1.134,1.134,0,1,1,4.134,10.5,1.134,1.134,0,0,1,5.267,11.634Z" transform="translate(-2.638 -7.666)" fill="none" stroke="#000" stroke-width="0.75"/>
-              <path id="Path_426415" data-name="Path 426415" d="M29.267,11.634A1.134,1.134,0,1,1,28.134,10.5,1.134,1.134,0,0,1,29.267,11.634Z" transform="translate(-17.568 -7.666)" fill="none" stroke="#000" stroke-width="0.75"/>
-              <path id="Path_426416" data-name="Path 426416" d="M3.537,21H3.364a1.134,1.134,0,0,0-1.118.947l-.189,1.134A1.134,1.134,0,0,0,3.175,24.4H5.238M12.606,21h.173a1.134,1.134,0,0,1,1.118.947l.189,1.134a1.134,1.134,0,0,1-1.118,1.32H10.906" transform="translate(-2.041 -14.198)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"/>
-            </g>
-          </svg>
-          <span>CRM</span></a>
-      </li>
-
-      <li class="submenu menu-list"><a href="#">
-          <!-- <img src="../../../assets/images/project-mngmt.svg" alt="Project Management" class="icon-normal"> -->
-          
-          <svg id="Group_161762" data-name="Group 161762" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20">
-            <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0"/>
-            <g id="Icon_ion-briefcase-outline" data-name="Icon ion-briefcase-outline" transform="translate(4 4.75)">
-              <path id="Path_426410" data-name="Path 426410" d="M3.563,9h9.626A1.277,1.277,0,0,1,14.5,10.239v5.783a1.277,1.277,0,0,1-1.313,1.239H3.563A1.277,1.277,0,0,1,2.25,16.022V10.239A1.277,1.277,0,0,1,3.563,9Z" transform="translate(-2.25 -6.76)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="0.7"/>
-              <path id="Path_426411" data-name="Path 426411" d="M5.313,6.74V5.62A1.02,1.02,0,0,1,6.188,4.5h4.375a1.02,1.02,0,0,1,.875,1.12V6.74M14.5,10.66H2.25m7.875,0v.84a.255.255,0,0,1-.219.28H6.844a.255.255,0,0,1-.219-.28v-.84" transform="translate(-2.25 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
-            </g>
-          </svg>
-          <span>Project Management</span></a>
-      </li>
-
-      <li class="submenu menu-list"><a href="#">
-          <!-- <img src="../../../assets/images/marketing.svg" alt="Marketing" class="icon-normal"> -->
-          <svg id="Group_161762" data-name="Group 161762" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20">
-            <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0"/>
-            <g id="Icon_feather-users" data-name="Icon feather-users" transform="translate(4.5 5.364)">
-              <path id="Path_426417" data-name="Path 426417" d="M9.7,25.576V24.551A2.051,2.051,0,0,0,7.653,22.5h-4.1A2.051,2.051,0,0,0,1.5,24.551v1.025" transform="translate(-1.5 -15.758)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"/>
-              <path id="Path_426418" data-name="Path 426418" d="M11.6,6.551A2.051,2.051,0,1,1,9.551,4.5,2.051,2.051,0,0,1,11.6,6.551Z" transform="translate(-5.243 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"/>
-              <path id="Path_426419" data-name="Path 426419" d="M27.589,14.447V13.355a2.163,2.163,0,0,0-1.538-2.112M24,4.7A2.163,2.163,0,0,1,25.542,6.81,2.163,2.163,0,0,1,24,8.924" transform="translate(-15.589 -4.628)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"/>
-            </g>
-          </svg>
-          
-          <span>Marketing</span></a>
-      </li>
-
-      <li class="submenu menu-list"> <a href="#">
-          <!-- <img src="../../../assets/images/notification.svg" alt="Notification" class="icon-normal"> -->
-          <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 19.726 19.726">
-            <rect id="Rectangle_151149" data-name="Rectangle 151149" width="30" height="30" fill="none"/>
-            <g id="Group_162385" data-name="Group 162385" transform="translate(4.863 3.457)">
-              <g id="Group_162388" data-name="Group 162388" transform="translate(0)">
-                <path id="Path_334627" data-name="Path 334627" d="M10.042,10.883H.708A.325.325,0,0,1,.42,10.4L1.839,8V5.384A3.441,3.441,0,0,1,4.323,2.1V1.346a.989.989,0,0,1,1.977,0v.741a3.45,3.45,0,0,1,1.53.874,3.36,3.36,0,0,1,1.03,2.423V7.866l1.47,2.531A.325.325,0,0,1,10.042,10.883Z" transform="translate(-0.375 -0.375)" fill="none" stroke="#000" stroke-width="0.75"/>
-                <path id="Path_334628" data-name="Path 334628" d="M8.3,15.719a1.651,1.651,0,0,1-3.3,0" transform="translate(-1.646 -4.242)" fill="none" stroke="#000" stroke-width="0.75"/>
+            </ul>
+          </oj-bind-if>
+          <div class="submenu-list">
+            <div>Dashboard</div>
+            <div>Contacts</div>
+            <div>Leads</div>
+            <div>Deals</div>
+            <div>Reports</div>
+          </div>
+        </li>
+  
+        <li class="submenu menu-list"><a href="#">
+            <!-- <img src="../../../assets/images/crm.svg" alt="CRM" class="icon-normal"> -->
+            <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30"
+              height="30" viewBox="0 0 20 20">
+              <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0" />
+              <g id="Icon_akar-people-group" data-name="Icon akar-people-group" transform="translate(3.969 4.332)">
+                <path id="Path_426412" data-name="Path 426412"
+                  d="M16.256,22.394l-.363-2.9A1.7,1.7,0,0,0,14.205,18H12.956a1.7,1.7,0,0,0-1.687,1.49l-.363,2.9a1.134,1.134,0,0,0,1.126,1.274h3.1a1.134,1.134,0,0,0,1.125-1.274Z"
+                  transform="translate(-7.55 -12.332)" fill="none" stroke="#000" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.75" />
+                <path id="Path_426413" data-name="Path 426413" d="M16.9,4.7A1.7,1.7,0,1,1,15.2,3,1.7,1.7,0,0,1,16.9,4.7Z"
+                  transform="translate(-9.17 -3)" fill="none" stroke="#000" stroke-width="0.75" />
+                <path id="Path_426414" data-name="Path 426414"
+                  d="M5.267,11.634A1.134,1.134,0,1,1,4.134,10.5,1.134,1.134,0,0,1,5.267,11.634Z"
+                  transform="translate(-2.638 -7.666)" fill="none" stroke="#000" stroke-width="0.75" />
+                <path id="Path_426415" data-name="Path 426415"
+                  d="M29.267,11.634A1.134,1.134,0,1,1,28.134,10.5,1.134,1.134,0,0,1,29.267,11.634Z"
+                  transform="translate(-17.568 -7.666)" fill="none" stroke="#000" stroke-width="0.75" />
+                <path id="Path_426416" data-name="Path 426416"
+                  d="M3.537,21H3.364a1.134,1.134,0,0,0-1.118.947l-.189,1.134A1.134,1.134,0,0,0,3.175,24.4H5.238M12.606,21h.173a1.134,1.134,0,0,1,1.118.947l.189,1.134a1.134,1.134,0,0,1-1.118,1.32H10.906"
+                  transform="translate(-2.041 -14.198)" fill="none" stroke="#000" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.75" />
               </g>
-            </g>
-          </svg>
-          <span>Notification</span></a>
-      </li>
-
-      <li class="submenu menu-list"><a href="#">
-          <!-- <img src="../../../assets/images/calender.svg" alt="Calendar" class="icon-normal"> -->
-          
-          <svg id="Group_1686557806" class="calendar-icon" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 19.726 19.726">
-            <g id="Group_1686557807" data-name="Group 1686557807" transform="translate(4.863 4.863)">
-              <rect id="Rectangle_298956" data-name="Rectangle 298956" width="10" height="9" rx="1" transform="translate(0 1)" fill="#fff" stroke="#000" stroke-width="0.75"/>
-              <line id="Line_9115" data-name="Line 9115" x2="9.132" transform="translate(0.434 3.576)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.75"/>
-              <line id="Line_9117" data-name="Line 9117" y2="1.5" transform="translate(6.992)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.75"/>
-              <line id="Line_9118" data-name="Line 9118" y2="1.5" transform="translate(2.576)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.75"/>
-            </g>
-          </svg>
-          <span>Calendar</span></a>
-      </li>
-
-      <li class="submenu menu-list"><a href="#">
-          <!-- <img src="../../../assets/images/my-transcation.svg" alt="My Transaction" class="icon-normal"> -->
-          <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 19.726 19.726">
-            <rect id="Rectangle_151149" data-name="Rectangle 151149" width="30" height="30" fill="none"/>
-            <path id="Icon_akar-arrow-right-left" data-name="Icon akar-arrow-right-left" d="M13.535,5.008H4.5m9.035,0L11.527,7.015m2.008-2.008L11.527,3M4.5,11.031h9.035m-9.035,0,2.008,2.008M4.5,11.031,6.508,9.023" transform="translate(0.846 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75"/>
-          </svg>
-          <span>My Transaction</span></a>
-      </li>
-
-    </ul>
-
+            </svg>
+            <span>CRM</span></a>
+        </li>
+  
+        <li class="submenu menu-list"><a href="#">
+            <!-- <img src="../../../assets/images/project-mngmt.svg" alt="Project Management" class="icon-normal"> -->
+  
+            <svg id="Group_161762" data-name="Group 161762" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+              viewBox="0 0 20 20">
+              <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0" />
+              <g id="Icon_ion-briefcase-outline" data-name="Icon ion-briefcase-outline" transform="translate(4 4.75)">
+                <path id="Path_426410" data-name="Path 426410"
+                  d="M3.563,9h9.626A1.277,1.277,0,0,1,14.5,10.239v5.783a1.277,1.277,0,0,1-1.313,1.239H3.563A1.277,1.277,0,0,1,2.25,16.022V10.239A1.277,1.277,0,0,1,3.563,9Z"
+                  transform="translate(-2.25 -6.76)" fill="none" stroke="#000" stroke-linejoin="round"
+                  stroke-width="0.7" />
+                <path id="Path_426411" data-name="Path 426411"
+                  d="M5.313,6.74V5.62A1.02,1.02,0,0,1,6.188,4.5h4.375a1.02,1.02,0,0,1,.875,1.12V6.74M14.5,10.66H2.25m7.875,0v.84a.255.255,0,0,1-.219.28H6.844a.255.255,0,0,1-.219-.28v-.84"
+                  transform="translate(-2.25 -4.5)" fill="none" stroke="#000" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.7" />
+              </g>
+            </svg>
+            <span>Project Management</span></a>
+        </li>
+  
+        <li class="submenu menu-list"><a href="#">
+            <!-- <img src="../../../assets/images/marketing.svg" alt="Marketing" class="icon-normal"> -->
+            <svg id="Group_161762" data-name="Group 161762" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+              viewBox="0 0 20 20">
+              <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0" />
+              <g id="Icon_feather-users" data-name="Icon feather-users" transform="translate(4.5 5.364)">
+                <path id="Path_426417" data-name="Path 426417"
+                  d="M9.7,25.576V24.551A2.051,2.051,0,0,0,7.653,22.5h-4.1A2.051,2.051,0,0,0,1.5,24.551v1.025"
+                  transform="translate(-1.5 -15.758)" fill="none" stroke="#000" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.75" />
+                <path id="Path_426418" data-name="Path 426418"
+                  d="M11.6,6.551A2.051,2.051,0,1,1,9.551,4.5,2.051,2.051,0,0,1,11.6,6.551Z"
+                  transform="translate(-5.243 -4.5)" fill="none" stroke="#000" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.75" />
+                <path id="Path_426419" data-name="Path 426419"
+                  d="M27.589,14.447V13.355a2.163,2.163,0,0,0-1.538-2.112M24,4.7A2.163,2.163,0,0,1,25.542,6.81,2.163,2.163,0,0,1,24,8.924"
+                  transform="translate(-15.589 -4.628)" fill="none" stroke="#000" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.75" />
+              </g>
+            </svg>
+  
+            <span>Marketing</span></a>
+        </li>
+  
+        <li class="submenu menu-list"> <a href="#">
+            <!-- <img src="../../../assets/images/notification.svg" alt="Notification" class="icon-normal"> -->
+            <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30"
+              height="30" viewBox="0 0 19.726 19.726">
+              <rect id="Rectangle_151149" data-name="Rectangle 151149" width="30" height="30" fill="none" />
+              <g id="Group_162385" data-name="Group 162385" transform="translate(4.863 3.457)">
+                <g id="Group_162388" data-name="Group 162388" transform="translate(0)">
+                  <path id="Path_334627" data-name="Path 334627"
+                    d="M10.042,10.883H.708A.325.325,0,0,1,.42,10.4L1.839,8V5.384A3.441,3.441,0,0,1,4.323,2.1V1.346a.989.989,0,0,1,1.977,0v.741a3.45,3.45,0,0,1,1.53.874,3.36,3.36,0,0,1,1.03,2.423V7.866l1.47,2.531A.325.325,0,0,1,10.042,10.883Z"
+                    transform="translate(-0.375 -0.375)" fill="none" stroke="#000" stroke-width="0.75" />
+                  <path id="Path_334628" data-name="Path 334628" d="M8.3,15.719a1.651,1.651,0,0,1-3.3,0"
+                    transform="translate(-1.646 -4.242)" fill="none" stroke="#000" stroke-width="0.75" />
+                </g>
+              </g>
+            </svg>
+            <span>Notification</span></a>
+        </li>
+  
+        <li class="submenu menu-list"><a href="#">
+            <!-- <img src="../../../assets/images/calender.svg" alt="Calendar" class="icon-normal"> -->
+  
+            <svg id="Group_1686557806" class="calendar-icon" data-name="Group 1686557806"
+              xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 19.726 19.726">
+              <g id="Group_1686557807" data-name="Group 1686557807" transform="translate(4.863 4.863)">
+                <rect id="Rectangle_298956" data-name="Rectangle 298956" width="10" height="9" rx="1"
+                  transform="translate(0 1)" fill="#fff" stroke="#000" stroke-width="0.75" />
+                <line id="Line_9115" data-name="Line 9115" x2="9.132" transform="translate(0.434 3.576)" fill="none"
+                  stroke="#000" stroke-linecap="round" stroke-width="0.75" />
+                <line id="Line_9117" data-name="Line 9117" y2="1.5" transform="translate(6.992)" fill="none" stroke="#000"
+                  stroke-linecap="round" stroke-width="0.75" />
+                <line id="Line_9118" data-name="Line 9118" y2="1.5" transform="translate(2.576)" fill="none" stroke="#000"
+                  stroke-linecap="round" stroke-width="0.75" />
+              </g>
+            </svg>
+            <span>Calendar</span></a>
+        </li>
+  
+        <li class="submenu menu-list"><a href="#">
+            <!-- <img src="../../../assets/images/my-transcation.svg" alt="My Transaction" class="icon-normal"> -->
+            <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30"
+              height="30" viewBox="0 0 19.726 19.726">
+              <rect id="Rectangle_151149" data-name="Rectangle 151149" width="30" height="30" fill="none" />
+              <path id="Icon_akar-arrow-right-left" data-name="Icon akar-arrow-right-left"
+                d="M13.535,5.008H4.5m9.035,0L11.527,7.015m2.008-2.008L11.527,3M4.5,11.031h9.035m-9.035,0,2.008,2.008M4.5,11.031,6.508,9.023"
+                transform="translate(0.846 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="0.75" />
+            </svg>
+            <span>My Transaction</span></a>
+        </li>
+  
+      </ul>
+  
+    </div>
+  
   </div>
+</oj-bind-if>
 
-</div>
 
 
+
+<oj-bind-if test="[[selectedEvent() == '']]">
+  <div class="chat-box" :class="[[ loader() ? 'disable-ui' : '' ]]">
+
+    <div class="mid-panel-wrap" :class="[[ messages().length > 0 ? 'inputSection' : '' ]]">
+  
+      <div class="middle-chat-scrl" :id="[[scrollContainer]]">
+  
+        <oj-bind-if test="[[ messages().length === 0 ]]">
+  
+          <div class="chat-mid-title">
+  
+            <h1 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
+              <oj-bind-text value="Welcome to the,"></oj-bind-text>
+            </h1>
+  
+            <h2 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
+              <oj-bind-text value="[[title1]]"></oj-bind-text>
+            </h2>
+  
+            <h5 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
+              <oj-bind-text value="[[title2]]"> </oj-bind-text>
+            </h5>
+  
+            <div class="demo-grid-sizes demo-flex-display">
+  
+              <div class="oj-flex">
+                <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('I am NSL Digital CEO'); }">
+                  <div class="grid-box">
+                    <img src="../../../assets/images/NSLDigital.svg" alt="logo">
+                    <h6>
+                      <oj-bind-text value="I am NSL Digital CEO"></oj-bind-text>
+                    </h6>
+                    <div class="oj-sm-text-align-end">
+                      <small>Know more...</small>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="oj-flex-item"
+                  data-bind="click: function() { getDefaultContent('NSL Invention & Constructs'); }">
+                  <div class="grid-box">
+                    <img src="../../../assets/images/Solution.svg" alt="logo">
+                    <h6>
+                      <oj-bind-text value="NSL Invention & Constructs"></oj-bind-text>
+                    </h6>
+                    <div class="oj-sm-text-align-end">
+                      <small>Know more...</small>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('create a Solution'); }">
+                  <div class="grid-box">
+                    <img src="../../../assets/images/Solution.svg" alt="logo">
+                    <h6>
+                      <oj-bind-text value="Create a solution"></oj-bind-text>
+                    </h6>
+                    <div class="oj-sm-text-align-end">
+                      <small>Know more...</small>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('Edit a solution'); }">
+                  <div class="grid-box">
+                    <img src="../../../assets/images/Solution.svg" alt="logo">
+                    <h6>
+                      <oj-bind-text value="Edit a solution"></oj-bind-text>
+                    </h6>
+                    <div class="oj-sm-text-align-end">
+                      <small>Know more...</small>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+  
+              <div class="grid-boxx" data-bind="click: function() { getDefaultContent('FineTune'); }"">
+                  <img src=" ../../../assets/images/Solution.svg" alt="logo">
+                <h6>
+                  <oj-bind-text value="Fine Tuning Model"></oj-bind-text>
+                </h6>
+  
+              </div>
+            </div>
+  
+          </div>
+  
+        </oj-bind-if>
+  
+        <oj-bind-if test="[[ messages().length > 0 ]]">
+  
+          <div class="chat-box-sec">
+  
+            <oj-bind-for-each data="[[messages]]">
+  
+              <template>
+  
+                <oj-bind-if test="[[ $current.data.user === 'user' && $current.data.h5 ]]">
+                  <div class="message user">
+                    <div class="bubble">
+                      <oj-bind-text value="[[$current.data.h5]]"></oj-bind-text>
+                    </div>
+                    <span class="user-right">
+                      <img src="assets/images/profile.png" alt="User" class="user-img-right">
+                    </span>
+                  </div>
+                </oj-bind-if>
+  
+                <oj-bind-if test="[[ $current.data.user === 'bot' ]]">
+  
+                  <div class="message bot" :data-selection-type="[[ $current.data.selectionType ]]"
+                    :data-title="[[ $current.data.buttonType ]]">
+  
+                    <div class="bubble">
+                      <oj-bind-if test="[[ $current.data.h5 ]]">
+                        <h5><oj-bind-text value="[[$current.data.h5]]"></oj-bind-text></h5>
+                      </oj-bind-if>
+  
+                      <oj-bind-if test="[[ $current.data.p1 ]]">
+                        <p :class="[['bold-text', !$current.data.h5]]">
+                          <oj-bind-text value="[[$current.data.p1]]"></oj-bind-text>
+                        </p>
+                      </oj-bind-if>
+  
+                      <oj-bind-if test="[[ $current.data.p2 ]]">
+                        <p><oj-bind-text value="[[$current.data.p2]]"></oj-bind-text></p>
+                      </oj-bind-if>
+  
+                      <oj-bind-if test="[[ $current.data.p3 ]]">
+                        <p><oj-bind-text value="[[$current.data.p3]]"></oj-bind-text></p>
+                      </oj-bind-if>
+  
+                      <oj-bind-if test="[[ $current.data.buttons.length > 0 ]]">
+                        <div class="tag-container">
+                          <div id="tags">
+                            <div class="message-container">
+                              <oj-bind-for-each data="[[$current.data.buttons]]">
+                                <template>
+                                  <oj-bind-if
+                                    test="[[ $current.data && $current.data !== '' && $current.data.length < 500 ]]">
+                                    <oj-button chroming="borderless" class="custom-tag"
+                                      id="'button-' + $current.index + '-' + $parentContext.index"
+                                      on-oj-action="[[handleChipClick]]">
+                                      <oj-bind-text value="[[$current.data]]"></oj-bind-text>
+                                    </oj-button>
+                                  </oj-bind-if>
+                                  <oj-bind-if test="[[ $current.data.length >= 400 ]]">
+                                    <div class="error-message">Error: Button text exceeds 400 characters.</div>
+                                  </oj-bind-if>
+                                </template>
+                              </oj-bind-for-each>
+                            </div>
+                          </div>
+                        </div>
+                      </oj-bind-if>
+  
+  
+  
+                      <oj-bind-if test="[[ $current.data.tableData.length > 0 ]]">
+                        <div style="display: grid;padding: 0px;">
+                          <selection-table-component data="[[$current.data.tableData]]"
+                            attributes-data="[[keyAttribute()]]"
+                            data-class="[[$current.data.tableClass]]"></selection-table-component>
+                        </div>
+                      </oj-bind-if>
+  
+                      <oj-bind-if test="[[ $current.data.accordionData.length > 0 ]]">
+                        <accordion-component data="[[$current.data.accordionData]]"></accordion-component>
+                      </oj-bind-if>
+  
+                    </div>
+  
+                    <span class="user-left">
+                      <img src="assets/images/nsl.svg" alt="Bot" class="user-left-img">
+                    </span>
+  
+                  </div>
+  
+                </oj-bind-if>
+  
+              </template>
+  
+            </oj-bind-for-each>
+  
+          </div>
+  
+        </oj-bind-if>
+  
+      </div>
+  
+      <oj-bind-if test="[[ messages().length > 0 ]]">
+  
+        <div class="input-area customInput chat-container">
+  
+          <div class="oj-flex oj-sm-justify-content-space-between">
+  
+            <div class="chat-icons">
+  
+              <div class="attach-voice-icons" on-click="[[sendIconClicked]]">
+                <oj-button chroming="borderless" class="cancel-button">
+                  Cancel
+                </oj-button>
+              </div>
+              <div class="attach-voice-icons" on-click="[[sendIconClicked]]">
+                <oj-button chroming="borderless" class="send-button">
+                  <oj-bind-text value="[[btnText]]"></oj-bind-text>
+                </oj-button>
+              </div>
+  
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </oj-bind-if>
+  
+    </div>
+  
+    <div class="loader-overlay" :class="[[ loader() ? 'visible' : 'hidden' ]]">
+      <div class="loader"></div>
+    </div>
+  
+  </div>
+</oj-bind-if>
+<oj-bind-if test="[[ messages().length == 0 ]]">
 
 <div class="chat-box" :class="[[ loader() ? 'disable-ui' : '' ]]">
 
@@ -213,218 +492,98 @@
     <div class="middle-chat-scrl" :id="[[scrollContainer]]">
 
       <oj-bind-if test="[[ messages().length === 0 ]]">
-
         <div class="chat-mid-title">
 
           <h1 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
-            <oj-bind-text value="Welcome to the,"></oj-bind-text>
+            <oj-bind-text value="Hello Deb!"></oj-bind-text>
           </h1>
 
-          <h2 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
-            <oj-bind-text value="[[title1]]"></oj-bind-text>
+          <h2 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center"><oj-bind-text
+              value="What would you like to know today"></oj-bind-text>
           </h2>
 
-          <h5 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
-            <oj-bind-text value="[[title2]]"> </oj-bind-text>
-          </h5>
-
-          <div class="demo-grid-sizes demo-flex-display">
-
-            <div class="oj-flex">
-              <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('I am NSL Digital CEO'); }">
-                <div class="grid-box">
-                  <img src="../../../assets/images/NSLDigital.svg" alt="logo">
-                  <h6>
-                    <oj-bind-text value="I am NSL Digital CEO"></oj-bind-text>
-                  </h6>
-                  <div class="oj-sm-text-align-end">
-                    <small>Know more...</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="oj-flex-item"
-                data-bind="click: function() { getDefaultContent('NSL Invention & Constructs'); }">
-                <div class="grid-box">
-                  <img src="../../../assets/images/Solution.svg" alt="logo">
-                  <h6>
-                    <oj-bind-text value="NSL Invention & Constructs"></oj-bind-text>
-                  </h6>
-                  <div class="oj-sm-text-align-end">
-                    <small>Know more...</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('create a Solution'); }">
-                <div class="grid-box">
-                  <img src="../../../assets/images/Solution.svg" alt="logo">
-                  <h6>
-                    <oj-bind-text value="Create a solution"></oj-bind-text>
-                  </h6>
-                  <div class="oj-sm-text-align-end">
-                    <small>Know more...</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('Edit a solution'); }">
-                <div class="grid-box">
-                  <img src="../../../assets/images/Solution.svg" alt="logo">
-                  <h6>
-                    <oj-bind-text value="Edit a solution"></oj-bind-text>
-                  </h6>
-                  <div class="oj-sm-text-align-end">
-                    <small>Know more...</small>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-              <div class="grid-boxx"  data-bind="click: function() { getDefaultContent('FineTune'); }"">
-                <img src="../../../assets/images/Solution.svg" alt="logo">
-                <h6>
-                  <oj-bind-text value="Fine Tuning Model"></oj-bind-text>
-                </h6>
-              
-            </div>
-          </div>
-
         </div>
-
       </oj-bind-if>
-
-      <oj-bind-if test="[[ messages().length > 0 ]]">
-
-        <div class="chat-box-sec">
-
-          <oj-bind-for-each data="[[messages]]">
-
-            <template>
-
-              <oj-bind-if test="[[ $current.data.user === 'user' && $current.data.h5 ]]">
-                <div class="message user">
-                  <div class="bubble">
-                    <oj-bind-text value="[[$current.data.h5]]"></oj-bind-text>
-                  </div>
-                  <span class="user-right">
-                    <img src="assets/images/profile.png" alt="User" class="user-img-right">
-                  </span>
+      
+      <div class="chat-box-sec">
+        <oj-bind-for-each data="[[messages]]">
+          <template>
+            <oj-bind-if test="[[ $current.data.user === 'user' ]]">
+              <div class="message user">
+                <div class="bubble">
+                  <oj-bind-text value="[[$current.data.text]]"></oj-bind-text>
                 </div>
-              </oj-bind-if>
+                <span class="user-right">
+                  <img src="assets/images/profile.png" alt="User" class="user-img-right">
+                </span>
+              </div>
+            </oj-bind-if>
 
-              <oj-bind-if test="[[ $current.data.user === 'bot' ]]">
+            <oj-bind-if test="[[ $current.data.user === 'bot' ]]">
+              <div class="message bot">
+                <div class="bubble">
+                  <oj-bind-text value="[[$current.data.text]]"></oj-bind-text>
 
-                <div class="message bot" :data-selection-type="[[ $current.data.selectionType ]]"
-                  :data-title="[[ $current.data.buttonType ]]" >
-
-                  <div class="bubble">
-                    <oj-bind-if test="[[ $current.data.h5 ]]">
-                      <h5><oj-bind-text value="[[$current.data.h5]]"></oj-bind-text></h5>
+                  <div>
+                    <oj-bind-if test="[[ $current.data.missingParameters.length > 0 ]]">
+                      <list-component list-data=[[$current.data.missingParameters]]>
+                      </list-component>
                     </oj-bind-if>
-
-                    <oj-bind-if test="[[ $current.data.p1 ]]">
-                      <p :class="[['bold-text', !$current.data.h5]]">
-                        <oj-bind-text value="[[$current.data.p1]]"></oj-bind-text>
-                      </p>
-                    </oj-bind-if>
-
-                    <oj-bind-if test="[[ $current.data.p2 ]]">
-                      <p><oj-bind-text value="[[$current.data.p2]]"></oj-bind-text></p>
-                    </oj-bind-if>
-
-                    <oj-bind-if test="[[ $current.data.p3 ]]">
-                      <p><oj-bind-text value="[[$current.data.p3]]"></oj-bind-text></p>
-                    </oj-bind-if>
-
-                    <oj-bind-if test="[[ $current.data.buttons.length > 0 ]]">
-                      <div class="tag-container">
-                        <div id="tags">
-                          <div class="message-container">
-                            <oj-bind-for-each data="[[$current.data.buttons]]">
-                              <template>
-                                <oj-bind-if test="[[ $current.data && $current.data !== '' && $current.data.length < 500 ]]">
-                                  <oj-button chroming="borderless" class="custom-tag"
-                                    id="'button-' + $current.index + '-' + $parentContext.index"
-                                    on-oj-action="[[handleChipClick]]">
-                                    <oj-bind-text value="[[$current.data]]"></oj-bind-text>
-                                  </oj-button>
-                                </oj-bind-if>
-                                <oj-bind-if test="[[ $current.data.length >= 400 ]]">
-                                  <div class="error-message">Error: Button text exceeds 400 characters.</div>
-                                </oj-bind-if>
-                              </template>
-                            </oj-bind-for-each>
-                          </div>
-                        </div>
-                      </div>
-                    </oj-bind-if>
-                    
-                    
-
-                    <oj-bind-if  test="[[ $current.data.tableData.length > 0 ]]">
-                      <div style="display: grid;padding: 0px;">
-                        <selection-table-component data="[[$current.data.tableData]]"
-                        attributes-data ="[[keyAttribute()]]"
-                        data-class="[[$current.data.tableClass]]"></selection-table-component>
-                      </div>
-                    </oj-bind-if>
-
-                    <oj-bind-if test="[[ $current.data.accordionData.length > 0 ]]">
-                      <accordion-component data="[[$current.data.accordionData]]"></accordion-component>
-                    </oj-bind-if>
-
                   </div>
 
-                  <span class="user-left">
-                    <img src="assets/images/nsl.svg" alt="Bot" class="user-left-img">
-                  </span>
+                  <div>
+                    <oj-bind-if test="[[ $current.data.fetchedData.length > 0 ]]">
+                      <accordion-component table-data=[[$current.data.fetchedData]]></accordion-component>
+                    </oj-bind-if>
+                  </div>
 
                 </div>
-
-              </oj-bind-if>
-
-            </template>
-
-          </oj-bind-for-each>
-
-        </div>
-
-      </oj-bind-if>
+                <span class="user-left">
+                  <img src="assets/images/nsl.svg" alt="Bot" class="user-left-img">
+                </span>
+              </div>
+            </oj-bind-if>
+          </template>
+        </oj-bind-for-each>
+      </div>
 
     </div>
 
-    <oj-bind-if test="[[ messages().length > 0 ]]">
+    <div class="input-area customInput chat-container">
 
-      <div class="input-area customInput chat-container">
+      <div class="oj-flex oj-sm-justify-content-space-between">
 
-        <div class="oj-flex oj-sm-justify-content-space-between">
+        <div class="chatInput">
+          <oj-c-input-text :id="[[chatInput]]" autocomplete="off" aria-label="chatInput" class="chat-input"
+            value="[[userMessage]]" on-focusin="[[onInputFocus]]" on-focusout="[[onInputBlur]]"
+            placeholder="Start Conversation With Stringer" on-keydown="[[handleKeyDown]]" label-hint=""
+            label-edge="none">
+          </oj-c-input-text>
+        </div>
 
-          <div class="chat-icons">
+        <div class="chat-icons">
 
-            <div class="attach-voice-icons" on-click="[[sendIconClicked]]">
-              <oj-button chroming="borderless" class="cancel-button">
-              Cancel
-              </oj-button>
-            </div>
-            <div class="attach-voice-icons" on-click="[[sendIconClicked]]">
-              <oj-button chroming="borderless" class="send-button">
-                <oj-bind-text value="[[btnText]]"></oj-bind-text>
-              </oj-button>
-            </div>
+          <div class="attach-voice-icons" data-bind="visible: !isInputFocused()" on-click="[[onClickVoiceIcon]]">
+            <img src="assets/images/voice-normal.svg" alt="voice" class="icon-normal">
+            <img src="assets/images/voice-hover.svg" alt="voice" class="icon-hover">
+          </div>
 
-
+          <div class="attach-voice-icons">
+            <label class="filelabel">
+              <img src="assets/images/attachment-normal.svg" alt="attachment" class="icon-normal">
+              <img src="assets/images/attachment-hover.svg" alt="attachment" class="icon-hover">
+              <input class="FileUpload1" id="FileInput" name="booking_attachment" type="file" />
+            </label>
           </div>
 
         </div>
 
       </div>
 
-    </oj-bind-if>
+    </div>
 
   </div>
 
-  <div class="loader-overlay" :class="[[ loader() ? 'visible' : 'hidden' ]]">
-    <div class="loader"></div>
-  </div>
+</div>
+</oj-bind-if>
+
