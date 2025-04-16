@@ -16,6 +16,8 @@ import Context = require("ojs/ojcontext");
 import Composite = require("ojs/ojcomposite");
 import ArrayDataProvider = require("ojs/ojarraydataprovider");
 
+
+
 export default class ViewModel implements Composite.ViewModel<Composite.PropertiesType> {
     busyResolve: (() => void);
     composite: Element;
@@ -72,6 +74,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     keyAttribute: ko.Observable<string>;
     pushArrayName: ko.Observable<string>;
     selectedEvent: ko.Observable<string>;
+    yamlJsonData: any;
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
         //At the start of your viewModel constructor
@@ -187,62 +190,62 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             this.composite.dispatchEvent(event);
             this.selectedEvent(param)
 
-            // if (param) {
-            //     const payloadData = this.payload()[0];
-            //     if (payloadData) {
-            //         payloadData.currentStep = this.nextSteps();
-            //         payloadData.selectedValues.action = param
-            //         this.payload.valueHasMutated();
-            //     }
-            //     // this.getIntialContent();
-            // }
+            if (param) {
+
+                // const payloadData = this.payload()[0];
+                // if (payloadData) {
+                //     payloadData.currentStep = this.nextSteps();
+                //     payloadData.selectedValues.action = param
+                //     this.payload.valueHasMutated();
+                // }
+                 this.getIntialContent();
+            }
 
         }
 
 
     }
 
-    // getIntialContent = async () => {
+    getIntialContent = async () => {
 
-    //     // let finalResponse =
-
-
-    //     this.loader(true);
-
-    //     try {
-    //         const response = await fetch("http://10.26.1.52:5003/process", {
-    //             method: "POST",
-    //             headers: { "Content-Type": "application/json" },
-    //             body: JSON.stringify(this.payload()[0]),
-    //         });
-
-    //         if (!response.ok) {
-    //             throw new Error(`Server error: ${response.status} ${response.statusText}`);
-    //         }
-
-    //         let finalResponse;
-    //         try {
-    //             finalResponse = await response.json();
-
-    //             this.keyAttribute(finalResponse?.TableKeyAttributes)
-    //             this.pushArrayName(finalResponse?.push_array_name)
+        // let finalResponse =
 
 
-    //             this.nextSteps(finalResponse.nextStep);
-    //         } catch (jsonError) {
-    //             throw new Error("Invalid JSON response from server.");
-    //         }
+        this.loader(true);
 
-    //         // Add bot's response to chat
-    //         this.messages.push(finalResponse);
+        try {
+            const response = await fetch("http://10.26.1.52:8010/api/solutions", {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+            });
 
-    //     } catch (error) {
-    //         console.error("Error sending query:", error);
-    //     } finally {
-    //         this.loader(false);
-    //         this.scrollToBottom();
-    //     }
-    // };
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status} ${response.statusText}`);
+            }
+
+            let finalResponse;
+            try {
+                finalResponse = await response.json();
+
+                // this.keyAttribute(finalResponse?.TableKeyAttributes)
+                // this.pushArrayName(finalResponse?.push_array_name)
+                // this.yamlJsonData = RootViewModel.parseYamlString(finalResponse.yaml_content);
+                console.log(finalResponse);
+                // this.nextSteps(finalResponse.nextStep);
+            } catch (jsonError) {
+                throw new Error("Invalid JSON response from server.");
+            }
+
+            // Add bot's response to chat
+            this.messages.push(finalResponse);
+
+        } catch (error) {
+            console.error("Error sending query:", error);
+        } finally {
+            this.loader(false);
+            this.scrollToBottom();
+        }
+    };
 
     handleChipClick = (event: any): void => {
         const clickedButton = event.target as HTMLElement;
