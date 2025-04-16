@@ -178,7 +178,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             // window.open("http://10.26.1.52:5150/", "_blank"); // open in new tab
 
         } else {
-            console.log(this.messages.length);
+            console.log(param);
 
             let event = new CustomEvent("chatOpen", {
                 detail: { flag: true },

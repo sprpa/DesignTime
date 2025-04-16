@@ -20,24 +20,25 @@
   <div id="sidebar" class="sidebar-mobile" class="{'menu-visible': isMenuVisible()}">
 
     <div class="sidebar-inner">
-  
+
       <div class="top-pro-close">
-  
+
         <div class="profile-img-m">
           <img src="../../../assets/images/mobile-profile.svg" alt="User">
         </div>
-  
+
         <button id="close-btn" class="cl-btn" on-click="[[closeMenu]]">
           <img src="../../../assets/images/close.png" alt="close">
         </button>
-  
+
       </div>
-  
+
       <ul class="menu">
-  
+
         <li class="submenu menu-list"><a href="#">
             <!-- <img src="../../../assets/images/Home-icon.svg" alt="home" class="icon-normal hme-icn"> -->
-            <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 11.917 13.157">
+            <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 11.917 13.157">
               <g id="home" transform="translate(0.375 0.375)">
                 <path id="Path_352535" data-name="Path 352535"
                   d="M3,6.343,8.583,2l5.583,4.343v6.824a1.241,1.241,0,0,1-1.241,1.241H4.241A1.241,1.241,0,0,1,3,13.167Z"
@@ -53,7 +54,7 @@
         <li class="submenu menu-list">
           <a href="#" on-click="[[() => toggleSubmenu('chat')]]">
             <!-- <img src="../../../assets/images/chat.svg" alt="CHAT" class="icon-normal"> -->
-  
+
             <svg id="Group_1686566517" class="chat-icon" data-name="Group 1686566517" xmlns="http://www.w3.org/2000/svg"
               width="30" height="30" viewBox="0 0 24 24">
               <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0" />
@@ -69,7 +70,7 @@
               </g>
             </svg>
             <span>Chat</span>
-  
+
           </a>
           <oj-bind-if test="[[activeSubmenu() === 'chat']]">
             <ul class="submenu-content ">
@@ -124,7 +125,7 @@
             <div>Reports</div>
           </div>
         </li>
-  
+
         <li class="submenu menu-list"><a href="#">
             <!-- <img src="../../../assets/images/crm.svg" alt="CRM" class="icon-normal"> -->
             <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30"
@@ -135,8 +136,9 @@
                   d="M16.256,22.394l-.363-2.9A1.7,1.7,0,0,0,14.205,18H12.956a1.7,1.7,0,0,0-1.687,1.49l-.363,2.9a1.134,1.134,0,0,0,1.126,1.274h3.1a1.134,1.134,0,0,0,1.125-1.274Z"
                   transform="translate(-7.55 -12.332)" fill="none" stroke="#000" stroke-linecap="round"
                   stroke-linejoin="round" stroke-width="0.75" />
-                <path id="Path_426413" data-name="Path 426413" d="M16.9,4.7A1.7,1.7,0,1,1,15.2,3,1.7,1.7,0,0,1,16.9,4.7Z"
-                  transform="translate(-9.17 -3)" fill="none" stroke="#000" stroke-width="0.75" />
+                <path id="Path_426413" data-name="Path 426413"
+                  d="M16.9,4.7A1.7,1.7,0,1,1,15.2,3,1.7,1.7,0,0,1,16.9,4.7Z" transform="translate(-9.17 -3)" fill="none"
+                  stroke="#000" stroke-width="0.75" />
                 <path id="Path_426414" data-name="Path 426414"
                   d="M5.267,11.634A1.134,1.134,0,1,1,4.134,10.5,1.134,1.134,0,0,1,5.267,11.634Z"
                   transform="translate(-2.638 -7.666)" fill="none" stroke="#000" stroke-width="0.75" />
@@ -151,10 +153,10 @@
             </svg>
             <span>CRM</span></a>
         </li>
-  
+
         <li class="submenu menu-list"><a href="#">
             <!-- <img src="../../../assets/images/project-mngmt.svg" alt="Project Management" class="icon-normal"> -->
-  
+
             <svg id="Group_161762" data-name="Group 161762" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
               viewBox="0 0 20 20">
               <rect id="Rectangle_156977" data-name="Rectangle 156977" width="30" height="30" fill="#fff" opacity="0" />
@@ -171,7 +173,7 @@
             </svg>
             <span>Project Management</span></a>
         </li>
-  
+
         <li class="submenu menu-list"><a href="#">
             <!-- <img src="../../../assets/images/marketing.svg" alt="Marketing" class="icon-normal"> -->
             <svg id="Group_161762" data-name="Group 161762" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
@@ -192,10 +194,10 @@
                   stroke-linejoin="round" stroke-width="0.75" />
               </g>
             </svg>
-  
+
             <span>Marketing</span></a>
         </li>
-  
+
         <li class="submenu menu-list"> <a href="#">
             <!-- <img src="../../../assets/images/notification.svg" alt="Notification" class="icon-normal"> -->
             <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30"
@@ -213,10 +215,10 @@
             </svg>
             <span>Notification</span></a>
         </li>
-  
+
         <li class="submenu menu-list"><a href="#">
             <!-- <img src="../../../assets/images/calender.svg" alt="Calendar" class="icon-normal"> -->
-  
+
             <svg id="Group_1686557806" class="calendar-icon" data-name="Group 1686557806"
               xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 19.726 19.726">
               <g id="Group_1686557807" data-name="Group 1686557807" transform="translate(4.863 4.863)">
@@ -224,15 +226,15 @@
                   transform="translate(0 1)" fill="#fff" stroke="#000" stroke-width="0.75" />
                 <line id="Line_9115" data-name="Line 9115" x2="9.132" transform="translate(0.434 3.576)" fill="none"
                   stroke="#000" stroke-linecap="round" stroke-width="0.75" />
-                <line id="Line_9117" data-name="Line 9117" y2="1.5" transform="translate(6.992)" fill="none" stroke="#000"
-                  stroke-linecap="round" stroke-width="0.75" />
-                <line id="Line_9118" data-name="Line 9118" y2="1.5" transform="translate(2.576)" fill="none" stroke="#000"
-                  stroke-linecap="round" stroke-width="0.75" />
+                <line id="Line_9117" data-name="Line 9117" y2="1.5" transform="translate(6.992)" fill="none"
+                  stroke="#000" stroke-linecap="round" stroke-width="0.75" />
+                <line id="Line_9118" data-name="Line 9118" y2="1.5" transform="translate(2.576)" fill="none"
+                  stroke="#000" stroke-linecap="round" stroke-width="0.75" />
               </g>
             </svg>
             <span>Calendar</span></a>
         </li>
-  
+
         <li class="submenu menu-list"><a href="#">
             <!-- <img src="../../../assets/images/my-transcation.svg" alt="My Transaction" class="icon-normal"> -->
             <svg id="Group_1686557806" data-name="Group 1686557806" xmlns="http://www.w3.org/2000/svg" width="30"
@@ -245,11 +247,11 @@
             </svg>
             <span>My Transaction</span></a>
         </li>
-  
+
       </ul>
-  
+
     </div>
-  
+
   </div>
 </oj-bind-if>
 
@@ -260,27 +262,27 @@
   <div class="chat-box" :class="[[ loader() ? 'disable-ui' : '' ]]">
 
     <div class="mid-panel-wrap" :class="[[ messages().length > 0 ? 'inputSection' : '' ]]">
-  
+
       <div class="middle-chat-scrl" :id="[[scrollContainer]]">
-  
+
         <oj-bind-if test="[[ messages().length === 0 ]]">
-  
+
           <div class="chat-mid-title">
-  
+
             <h1 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
               <oj-bind-text value="Welcome to the,"></oj-bind-text>
             </h1>
-  
+
             <h2 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
               <oj-bind-text value="[[title1]]"></oj-bind-text>
             </h2>
-  
+
             <h5 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
               <oj-bind-text value="[[title2]]"> </oj-bind-text>
             </h5>
-  
+
             <div class="demo-grid-sizes demo-flex-display">
-  
+
               <div class="oj-flex">
                 <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('I am NSL Digital CEO'); }">
                   <div class="grid-box">
@@ -293,7 +295,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="oj-flex-item"
                   data-bind="click: function() { getDefaultContent('NSL Invention & Constructs'); }">
                   <div class="grid-box">
@@ -306,7 +308,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('create a Solution'); }">
                   <div class="grid-box">
                     <img src="../../../assets/images/Solution.svg" alt="logo">
@@ -318,7 +320,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="oj-flex-item" data-bind="click: function() { getDefaultContent('Edit a solution'); }">
                   <div class="grid-box">
                     <img src="../../../assets/images/Solution.svg" alt="logo">
@@ -330,30 +332,30 @@
                     </div>
                   </div>
                 </div>
-  
+
               </div>
-  
+
               <div class="grid-boxx" data-bind="click: function() { getDefaultContent('FineTune'); }"">
                   <img src=" ../../../assets/images/Solution.svg" alt="logo">
                 <h6>
                   <oj-bind-text value="Fine Tuning Model"></oj-bind-text>
                 </h6>
-  
+
               </div>
             </div>
-  
+
           </div>
-  
+
         </oj-bind-if>
-  
+
         <oj-bind-if test="[[ messages().length > 0 ]]">
-  
+
           <div class="chat-box-sec">
-  
+
             <oj-bind-for-each data="[[messages]]">
-  
+
               <template>
-  
+
                 <oj-bind-if test="[[ $current.data.user === 'user' && $current.data.h5 ]]">
                   <div class="message user">
                     <div class="bubble">
@@ -364,31 +366,31 @@
                     </span>
                   </div>
                 </oj-bind-if>
-  
+
                 <oj-bind-if test="[[ $current.data.user === 'bot' ]]">
-  
+
                   <div class="message bot" :data-selection-type="[[ $current.data.selectionType ]]"
                     :data-title="[[ $current.data.buttonType ]]">
-  
+
                     <div class="bubble">
                       <oj-bind-if test="[[ $current.data.h5 ]]">
                         <h5><oj-bind-text value="[[$current.data.h5]]"></oj-bind-text></h5>
                       </oj-bind-if>
-  
+
                       <oj-bind-if test="[[ $current.data.p1 ]]">
                         <p :class="[['bold-text', !$current.data.h5]]">
                           <oj-bind-text value="[[$current.data.p1]]"></oj-bind-text>
                         </p>
                       </oj-bind-if>
-  
+
                       <oj-bind-if test="[[ $current.data.p2 ]]">
                         <p><oj-bind-text value="[[$current.data.p2]]"></oj-bind-text></p>
                       </oj-bind-if>
-  
+
                       <oj-bind-if test="[[ $current.data.p3 ]]">
                         <p><oj-bind-text value="[[$current.data.p3]]"></oj-bind-text></p>
                       </oj-bind-if>
-  
+
                       <oj-bind-if test="[[ $current.data.buttons.length > 0 ]]">
                         <div class="tag-container">
                           <div id="tags">
@@ -412,9 +414,9 @@
                           </div>
                         </div>
                       </oj-bind-if>
-  
-  
-  
+
+
+
                       <oj-bind-if test="[[ $current.data.tableData.length > 0 ]]">
                         <div style="display: grid;padding: 0px;">
                           <selection-table-component data="[[$current.data.tableData]]"
@@ -422,39 +424,39 @@
                             data-class="[[$current.data.tableClass]]"></selection-table-component>
                         </div>
                       </oj-bind-if>
-  
+
                       <oj-bind-if test="[[ $current.data.accordionData.length > 0 ]]">
                         <accordion-component data="[[$current.data.accordionData]]"></accordion-component>
                       </oj-bind-if>
-  
+
                     </div>
-  
+
                     <span class="user-left">
                       <img src="assets/images/nsl.svg" alt="Bot" class="user-left-img">
                     </span>
-  
+
                   </div>
-  
+
                 </oj-bind-if>
-  
+
               </template>
-  
+
             </oj-bind-for-each>
-  
+
           </div>
-  
+
         </oj-bind-if>
-  
+
       </div>
-  
+
       <oj-bind-if test="[[ messages().length > 0 ]]">
-  
+
         <div class="input-area customInput chat-container">
-  
+
           <div class="oj-flex oj-sm-justify-content-space-between">
-  
+
             <div class="chat-icons">
-  
+
               <div class="attach-voice-icons" on-click="[[sendIconClicked]]">
                 <oj-button chroming="borderless" class="cancel-button">
                   Cancel
@@ -465,125 +467,127 @@
                   <oj-bind-text value="[[btnText]]"></oj-bind-text>
                 </oj-button>
               </div>
-  
-  
+
+
             </div>
-  
+
           </div>
-  
+
         </div>
-  
+
       </oj-bind-if>
-  
+
     </div>
-  
+
     <div class="loader-overlay" :class="[[ loader() ? 'visible' : 'hidden' ]]">
       <div class="loader"></div>
     </div>
-  
+
   </div>
 </oj-bind-if>
-<oj-bind-if test="[[ messages().length == 0 ]]">
+<oj-bind-if test="[[selectedEvent() == 'create a Solution']]">
+  <div class="chat-box" :class="[[ loader() ? 'disable-ui' : '' ]]">
 
-<div class="chat-box" :class="[[ loader() ? 'disable-ui' : '' ]]">
+    <div class="mid-panel-wrap" :class="[[ messages().length > 0 ? 'inputSection' : '' ]]">
 
-  <div class="mid-panel-wrap" :class="[[ messages().length > 0 ? 'inputSection' : '' ]]">
+      <div class="middle-chat-scrl" :id="[[scrollContainer]]">
 
-    <div class="middle-chat-scrl" :id="[[scrollContainer]]">
+        <oj-bind-if test="[[ messages().length === 0 ]]">
+          <div class="chat-mid-title">
 
-      <oj-bind-if test="[[ messages().length === 0 ]]">
-        <div class="chat-mid-title">
+            <h1 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
+              <oj-bind-text value="Hello Deb!"></oj-bind-text>
+            </h1>
 
-          <h1 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
-            <oj-bind-text value="Hello Deb!"></oj-bind-text>
-          </h1>
+            <h2 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center"><oj-bind-text
+                value="What would you like to know today"></oj-bind-text>
+            </h2>
 
-          <h2 class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center"><oj-bind-text
-              value="What would you like to know today"></oj-bind-text>
-          </h2>
-
-        </div>
-      </oj-bind-if>
-      
-      <div class="chat-box-sec">
-        <oj-bind-for-each data="[[messages]]">
-          <template>
-            <oj-bind-if test="[[ $current.data.user === 'user' ]]">
-              <div class="message user">
-                <div class="bubble">
-                  <oj-bind-text value="[[$current.data.text]]"></oj-bind-text>
-                </div>
-                <span class="user-right">
-                  <img src="assets/images/profile.png" alt="User" class="user-img-right">
-                </span>
-              </div>
-            </oj-bind-if>
-
-            <oj-bind-if test="[[ $current.data.user === 'bot' ]]">
-              <div class="message bot">
-                <div class="bubble">
-                  <oj-bind-text value="[[$current.data.text]]"></oj-bind-text>
-
-                  <div>
-                    <oj-bind-if test="[[ $current.data.missingParameters.length > 0 ]]">
-                      <list-component list-data=[[$current.data.missingParameters]]>
-                      </list-component>
-                    </oj-bind-if>
-                  </div>
-
-                  <div>
-                    <oj-bind-if test="[[ $current.data.fetchedData.length > 0 ]]">
-                      <accordion-component table-data=[[$current.data.fetchedData]]></accordion-component>
-                    </oj-bind-if>
-                  </div>
-
-                </div>
-                <span class="user-left">
-                  <img src="assets/images/nsl.svg" alt="Bot" class="user-left-img">
-                </span>
-              </div>
-            </oj-bind-if>
-          </template>
-        </oj-bind-for-each>
-      </div>
-
-    </div>
-
-    <div class="input-area customInput chat-container">
-
-      <div class="oj-flex oj-sm-justify-content-space-between">
-
-        <div class="chatInput">
-          <oj-c-input-text :id="[[chatInput]]" autocomplete="off" aria-label="chatInput" class="chat-input"
-            value="[[userMessage]]" on-focusin="[[onInputFocus]]" on-focusout="[[onInputBlur]]"
-            placeholder="Start Conversation With Stringer" on-keydown="[[handleKeyDown]]" label-hint=""
-            label-edge="none">
-          </oj-c-input-text>
-        </div>
-
-        <div class="chat-icons">
-
-          <div class="attach-voice-icons" data-bind="visible: !isInputFocused()" on-click="[[onClickVoiceIcon]]">
-            <img src="assets/images/voice-normal.svg" alt="voice" class="icon-normal">
-            <img src="assets/images/voice-hover.svg" alt="voice" class="icon-hover">
           </div>
+        </oj-bind-if>
 
-          <div class="attach-voice-icons">
-            <label class="filelabel">
-              <img src="assets/images/attachment-normal.svg" alt="attachment" class="icon-normal">
-              <img src="assets/images/attachment-hover.svg" alt="attachment" class="icon-hover">
-              <input class="FileUpload1" id="FileInput" name="booking_attachment" type="file" />
-            </label>
-          </div>
+        <div class="chat-box-sec">
+          <oj-bind-for-each data="[[messages]]">
+            <template>
+              <oj-bind-if test="[[ $current.data.user === 'user' ]]">
+                <div class="message user">
+                  <div class="bubble">
+                    <oj-bind-text value="[[$current.data.text]]"></oj-bind-text>
+                  </div>
+                  <span class="user-right">
+                    <img src="assets/images/profile.png" alt="User" class="user-img-right">
+                  </span>
+                </div>
+              </oj-bind-if>
 
+              <oj-bind-if test="[[ $current.data.user === 'bot' ]]">
+                <div class="message bot">
+                  <div class="bubble">
+                    <oj-bind-text value="[[$current.data.text]]"></oj-bind-text>
+
+                    <div>
+                      <oj-bind-if test="[[ $current.data.missingParameters.length > 0 ]]">
+                        <list-component list-data=[[$current.data.missingParameters]]>
+                        </list-component>
+                      </oj-bind-if>
+                    </div>
+
+                    <div>
+                      <oj-bind-if test="[[ $current.data.fetchedData.length > 0 ]]">
+                        <accordion-component table-data=[[$current.data.fetchedData]]></accordion-component>
+                      </oj-bind-if>
+                    </div>
+
+                  </div>
+                  <span class="user-left">
+                    <img src="assets/images/nsl.svg" alt="Bot" class="user-left-img">
+                  </span>
+                </div>
+              </oj-bind-if>
+            </template>
+          </oj-bind-for-each>
         </div>
 
       </div>
 
+      <div class="input-area customInput chat-container">
+
+        <div class="oj-flex oj-sm-justify-content-space-between">
+
+          <div class="chatInput">
+            <oj-c-input-text :id="[[chatInput]]" autocomplete="off" aria-label="chatInput" class="chat-input"
+              value="[[userMessage]]" on-focusin="[[onInputFocus]]" on-focusout="[[onInputBlur]]"
+              placeholder="Start Conversation With Stringer" on-keydown="[[handleKeyDown]]" label-hint=""
+              label-edge="none">
+            </oj-c-input-text>
+          </div>
+
+          <div class="chat-icons">
+
+            <div class="attach-voice-icons" data-bind="visible: !isInputFocused()" on-click="[[onClickVoiceIcon]]">
+              <img src="assets/images/voice-normal.svg" alt="voice" class="icon-normal">
+              <img src="assets/images/voice-hover.svg" alt="voice" class="icon-hover">
+            </div>
+
+            <div class="attach-voice-icons">
+              <label class="filelabel">
+                <img src="assets/images/attachment-normal.svg" alt="attachment" class="icon-normal">
+                <img src="assets/images/attachment-hover.svg" alt="attachment" class="icon-hover">
+                <input class="FileUpload1" id="FileInput" name="booking_attachment" type="file" />
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
-
-</div>
 </oj-bind-if>
 
+<oj-bind-if test="[[selectedEvent() == 'Edit a solution']]">
+  ABCD
+</oj-bind-if>
