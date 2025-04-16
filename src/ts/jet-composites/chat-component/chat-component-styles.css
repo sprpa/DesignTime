@@ -528,11 +528,11 @@ chat-component[hidden] {
 top: 580px;
 left: 224px;
 width: 944px;
-height: 60px;
+/* height: 60px;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 box-shadow: 0px 3px 20px #E8E8E8C7;
 border: 0.5px solid #023FE61C;
-border-radius: 16px;
+border-radius: 16px; */
 opacity: 1;
 }
 

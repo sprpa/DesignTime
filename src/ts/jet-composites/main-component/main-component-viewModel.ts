@@ -46,22 +46,22 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.flag = ko.observableArray();
         this.selectedYaml = ko.observable();
 
-        this.isMainLayoutVisible = ko.observable(true);
+        this.isMainLayoutVisible = ko.observable(false);
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get("code");
 
-        const accessToken = localStorage.getItem("accessToken");
-        const refreshToken = localStorage.getItem("refreshToken");
+        const access_token = localStorage.getItem("access_token");
+        const refresh_token = localStorage.getItem("refresh_token");
 
-        // if (code) {
-        //     this.getLoginAuthToken(code);
-        //     this.isMainLayoutVisible(true);
-        // } else if (accessToken && refreshToken) {
-        //     this.isMainLayoutVisible = ko.observable(true);
-        //     console.log("Tokens found in localStorage → showing main layout");
-        // } else {
-        //     console.log("No tokens or code → redirecting to login...");
-        // }
+        if (code) {
+            this.getLoginAuthToken(code);
+            this.isMainLayoutVisible(true);
+        } else if (access_token && refresh_token) {
+            this.isMainLayoutVisible = ko.observable(true);
+            console.log("Tokens found in localStorage → showing main layout");
+        } else {
+            console.log("No tokens or code → redirecting to login...");
+        }
 
         this.properties = context.properties;
         this.res = componentStrings["main-component"];
@@ -155,16 +155,17 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
-                    
+
                 },
             });
 
             const result = await response.json();
-            const { accessToken, refreshToken } = result.result;
+            console.log(result)
+            const { access_token, refresh_token } = result.token_data;
 
-            if (accessToken && refreshToken) {
-                localStorage.setItem("accessToken", accessToken);
-                localStorage.setItem("refreshToken", refreshToken);
+            if (access_token && refresh_token) {
+                localStorage.setItem("access_token", access_token);
+                localStorage.setItem("refresh_token", refresh_token);
 
                 // Now show main layout
                 this.isMainLayoutVisible(true);
@@ -187,7 +188,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                     "Content-Type": "application/json",
                     "Accept": "application/json",
                     "provider": "AUTH0",
-                    "Authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+                    "Authorization": `Bearer ${localStorage.getItem('access_token')}`,
                 }
             });
 
