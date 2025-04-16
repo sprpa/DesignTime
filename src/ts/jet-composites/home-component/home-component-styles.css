@@ -1,0 +1,46 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   home-component .home-component-value-text {
+   color: var(--home-component-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+home-component:not(.oj-complete) {
+  visibility: hidden;
+}
+
+home-component {
+  min-height: 50px;
+  width: 50px;
+}
+
+home-component[hidden] {
+  display: none;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f6f8;
+}
+
+.login-button {
+  background-image: linear-gradient(#0058ff, #0058ff);
+  border-radius: 30px;
+  display: block !important;
+  height: 50px;
+}
+
+.login-button .oj-button-text {
+  color: #fff !important;
+  font-weight: normal !important;
+}
+
+.home-container button {
+  padding: 1rem 3rem;
+  font-size: 16px;
+}

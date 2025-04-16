@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="278" height="372" viewBox="0 0 278 372">
+  <defs>
+    <filter id="Rectangle_298814" x="0" y="0" width="278" height="372" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#e8e8e8" flood-opacity="0.78"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_22830" data-name="Rectangle 22830" width="16" height="16" stroke="#9d9d9d" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1686565995" data-name="Group 1686565995" transform="translate(-1106 11)">
+    <g transform="matrix(1, 0, 0, 1, 1106, -11)" filter="url(#Rectangle_298814)">
+      <g id="Rectangle_298814-2" data-name="Rectangle 298814" transform="translate(30 27)" fill="#fff" stroke="rgba(2,63,230,0.11)" stroke-width="0.5">
+        <rect width="218" height="312" rx="16" stroke="none"/>
+        <rect x="0.25" y="0.25" width="217.5" height="311.5" rx="15.75" fill="none"/>
+      </g>
+    </g>
+    <line id="Line_9199" data-name="Line 9199" x2="175" transform="translate(1158 91)" fill="none" stroke="#cad8f9" stroke-width="1"/>
+    <g id="Group_1686565987" data-name="Group 1686565987">
+      <rect id="Rectangle_22767" data-name="Rectangle 22767" width="218" height="237" transform="translate(1136 91)" fill="#fff" stroke="#35018b" stroke-width="0.15" opacity="0"/>
+      <text id="S" transform="translate(1299 161)" fill="#9d9d9d" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-3" y="0">S</tspan></text>
+      <text id="F" transform="translate(1272 161)" fill="#9d9d9d" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-3" y="0">F</tspan></text>
+      <text id="T" transform="translate(1245 161)" fill="#9d9d9d" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-3" y="0">T</tspan></text>
+      <text id="W" transform="translate(1218 161)" fill="#9d9d9d" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-5" y="0">W</tspan></text>
+      <text id="T-2" data-name="T" transform="translate(1191 161)" fill="#9d9d9d" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-3" y="0">T</tspan></text>
+      <text id="M" transform="translate(1164 161)" fill="#9d9d9d" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-5" y="0">M</tspan></text>
+      <g id="Group_1686565953" data-name="Group 1686565953" transform="translate(382 1132)">
+        <g id="Group_97689" data-name="Group 97689" transform="translate(932 -844)">
+          <rect id="Rectangle_22768" data-name="Rectangle 22768" width="24" height="24" rx="6" fill="#fff" opacity="0"/>
+          <text id="_4" data-name="4" transform="translate(8 17)" fill="#ccc" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">4</tspan></text>
+        </g>
+        <g id="Group_97688" data-name="Group 97688" transform="translate(905 -844)">
+          <rect id="Rectangle_22768-2" data-name="Rectangle 22768" width="24" height="24" rx="6" fill="#fff" opacity="0"/>
+          <text id="_3" data-name="3" transform="translate(8 17)" fill="#ccc" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">3</tspan></text>
+        </g>
+        <g id="Group_97687" data-name="Group 97687" transform="translate(878 -844)">
+          <rect id="Rectangle_22768-3" data-name="Rectangle 22768" width="24" height="24" rx="6" fill="#fff" opacity="0"/>
+          <text id="_2" data-name="2" transform="translate(9 17)" fill="#ccc" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">2</tspan></text>
+        </g>
+        <g id="Group_97686" data-name="Group 97686" transform="translate(851 -844)">
+          <rect id="Rectangle_22768-4" data-name="Rectangle 22768" width="24" height="24" rx="6" fill="#fff" opacity="0"/>
+          <text id="_1" data-name="1" transform="translate(9 17)" fill="#ccc" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">1</tspan></text>
+        </g>
+        <g id="Component_453_1" data-name="Component 453 – 1" transform="translate(824 -844)">
+          <rect id="Rectangle_22768-5" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_31" data-name="31" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">31</tspan></text>
+        </g>
+        <g id="Component_453_2" data-name="Component 453 – 2" transform="translate(797 -844)">
+          <rect id="Rectangle_22768-6" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_30" data-name="30" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">30</tspan></text>
+        </g>
+        <g id="Component_453_3" data-name="Component 453 – 3" transform="translate(770 -844)">
+          <rect id="Rectangle_22768-7" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_29" data-name="29" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">29</tspan></text>
+        </g>
+      </g>
+      <g id="Group_1686565952" data-name="Group 1686565952" transform="translate(382 1146)">
+        <g id="Component_453_4" data-name="Component 453 – 4" transform="translate(932 -885)">
+          <rect id="Rectangle_22768-8" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_28" data-name="28" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">28</tspan></text>
+        </g>
+        <g id="Component_453_5" data-name="Component 453 – 5" transform="translate(905 -885)">
+          <rect id="Rectangle_22768-9" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_27" data-name="27" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">27</tspan></text>
+        </g>
+        <g id="Component_453_6" data-name="Component 453 – 6" transform="translate(878 -885)">
+          <rect id="Rectangle_22768-10" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_26" data-name="26" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">26</tspan></text>
+        </g>
+        <g id="Component_453_7" data-name="Component 453 – 7" transform="translate(851 -885)">
+          <rect id="Rectangle_22768-11" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_25" data-name="25" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">25</tspan></text>
+        </g>
+        <g id="Component_453_8" data-name="Component 453 – 8" transform="translate(824 -885)">
+          <rect id="Rectangle_22768-12" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_24" data-name="24" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">24</tspan></text>
+        </g>
+        <g id="Component_453_9" data-name="Component 453 – 9" transform="translate(797 -885)">
+          <rect id="Rectangle_22768-13" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_23" data-name="23" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">23</tspan></text>
+        </g>
+        <g id="Component_453_10" data-name="Component 453 – 10" transform="translate(770 -885)">
+          <rect id="Rectangle_22768-14" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_22" data-name="22" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">22</tspan></text>
+        </g>
+      </g>
+      <g id="Group_1686565951" data-name="Group 1686565951" transform="translate(382 1158)">
+        <g id="Component_453_11" data-name="Component 453 – 11" transform="translate(932 -924)">
+          <rect id="Rectangle_22768-15" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_21" data-name="21" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">21</tspan></text>
+        </g>
+        <g id="Component_453_12" data-name="Component 453 – 12" transform="translate(905 -924)">
+          <rect id="Rectangle_22768-16" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_20" data-name="20" transform="translate(5 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">20</tspan></text>
+        </g>
+        <g id="Component_453_13" data-name="Component 453 – 13" transform="translate(878 -924)">
+          <rect id="Rectangle_22768-17" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_19" data-name="19" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">19</tspan></text>
+        </g>
+        <g id="Component_453_14" data-name="Component 453 – 14" transform="translate(851 -924)">
+          <rect id="Rectangle_22768-18" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_18" data-name="18" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">18</tspan></text>
+        </g>
+        <g id="Component_453_15" data-name="Component 453 – 15" transform="translate(824 -924)">
+          <rect id="Rectangle_22768-19" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_17" data-name="17" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">17</tspan></text>
+        </g>
+        <g id="Component_453_16" data-name="Component 453 – 16" transform="translate(797 -924)">
+          <rect id="Rectangle_22768-20" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_16" data-name="16" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">16</tspan></text>
+        </g>
+        <g id="Component_453_17" data-name="Component 453 – 17" transform="translate(770 -924)">
+          <rect id="Rectangle_22768-21" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_15" data-name="15" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">15</tspan></text>
+        </g>
+      </g>
+      <g id="Group_1686565950" data-name="Group 1686565950" transform="translate(382 1170)">
+        <g id="Component_453_18" data-name="Component 453 – 18" transform="translate(932 -963)">
+          <rect id="Rectangle_22768-22" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_14" data-name="14" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">14</tspan></text>
+        </g>
+        <g id="Component_453_19" data-name="Component 453 – 19" transform="translate(905 -963)">
+          <rect id="Rectangle_22768-23" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_13" data-name="13" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">13</tspan></text>
+        </g>
+        <g id="Component_453_20" data-name="Component 453 – 20" transform="translate(878 -963)">
+          <rect id="Rectangle_22768-24" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_12" data-name="12" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">12</tspan></text>
+        </g>
+        <g id="Component_453_21" data-name="Component 453 – 21" transform="translate(851 -963)">
+          <rect id="Rectangle_22768-25" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_11" data-name="11" transform="translate(7 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">11</tspan></text>
+        </g>
+        <g id="Component_453_22" data-name="Component 453 – 22" transform="translate(824 -963)">
+          <rect id="Rectangle_22768-26" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_10" data-name="10" transform="translate(6 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g id="Component_453_23" data-name="Component 453 – 23" transform="translate(797 -963)">
+          <rect id="Rectangle_22768-27" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_9" data-name="9" transform="translate(9 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">9</tspan></text>
+        </g>
+        <g id="Component_453_24" data-name="Component 453 – 24" transform="translate(770 -963)">
+          <rect id="Rectangle_22768-28" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+          <text id="_8" data-name="8" transform="translate(9 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">8</tspan></text>
+        </g>
+      </g>
+      <g id="Component_453_25" data-name="Component 453 – 25" transform="translate(1314 180)">
+        <rect id="Rectangle_22768-29" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+        <text id="_7" data-name="7" transform="translate(9 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">7</tspan></text>
+      </g>
+      <g id="Component_453_26" data-name="Component 453 – 26" transform="translate(1287 180)">
+        <rect id="Rectangle_22768-30" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+        <text id="_6" data-name="6" transform="translate(9 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">6</tspan></text>
+      </g>
+      <g id="Component_453_27" data-name="Component 453 – 27" transform="translate(1260 180)">
+        <rect id="Rectangle_22768-31" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+        <text id="_5" data-name="5" transform="translate(9 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">5</tspan></text>
+      </g>
+      <g id="Component_453_28" data-name="Component 453 – 28" transform="translate(1233 180)">
+        <rect id="Rectangle_22768-32" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+        <text id="_4-2" data-name="4" transform="translate(8 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">4</tspan></text>
+      </g>
+      <g id="Component_453_29" data-name="Component 453 – 29" transform="translate(1206 180)">
+        <rect id="Rectangle_22768-33" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+        <text id="_3-2" data-name="3" transform="translate(8 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">3</tspan></text>
+      </g>
+      <g id="Component_453_30" data-name="Component 453 – 30" transform="translate(1179 180)">
+        <rect id="Rectangle_22768-34" data-name="Rectangle 22768" width="24" height="24" fill="#35018b"/>
+        <text id="_2-2" data-name="2" transform="translate(9 17)" fill="#fff" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">2</tspan></text>
+      </g>
+      <g id="Component_453_31" data-name="Component 453 – 31" transform="translate(1152 180)">
+        <rect id="Rectangle_22768-35" data-name="Rectangle 22768" width="24" height="24" fill="#323232" opacity="0"/>
+        <text id="_1-2" data-name="1" transform="translate(9 17)" fill="#323232" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">1</tspan></text>
+      </g>
+      <g id="Component_454_1" data-name="Component 454 – 1" transform="translate(1152 107)">
+        <rect id="Rectangle_157584" data-name="Rectangle 157584" width="75" height="25" rx="4" fill="#fff"/>
+        <text id="April" transform="translate(6 17)" fill="#35018b" font-size="12" font-family="Inter" font-weight="600"><tspan x="0" y="0">April</tspan></text>
+        <g id="down" transform="translate(49 21) rotate(-90)" clip-path="url(#clip-path)">
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="invisible_box" data-name="invisible box">
+              <rect id="Rectangle_22831" data-name="Rectangle 22831" width="16" height="16" fill="none"/>
+            </g>
+            <g id="icons_Q2" data-name="icons Q2" transform="translate(5.328 3.334)">
+              <path id="Path_93525" data-name="Path 93525" d="M1.605,4.666,5.138,1.133a.633.633,0,0,0-.067-1,.7.7,0,0,0-.9.067L.205,4.2a.633.633,0,0,0,0,.933l3.967,4a.7.7,0,0,0,.9.067.633.633,0,0,0,.067-1Z" fill="#35018b"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Component_115_1" data-name="Component 115 – 1" transform="translate(1248 107)" opacity="0">
+        <rect id="Rectangle_298896" data-name="Rectangle 298896" width="90" height="25" rx="4" fill="#fff"/>
+        <g id="Group_1686565962" data-name="Group 1686565962" transform="translate(6 4)">
+          <text id="_2023" data-name="2023" transform="translate(0 13)" fill="#35018b" font-size="12" font-family="Inter" font-weight="600"><tspan x="0" y="0">2023</tspan></text>
+          <g id="Mask_Group_2" data-name="Mask Group 2" transform="translate(62 17) rotate(-90)" clip-path="url(#clip-path)">
+            <g id="Layer_2-2" data-name="Layer 2">
+              <g id="invisible_box-2" data-name="invisible box">
+                <rect id="Rectangle_39825" data-name="Rectangle 39825" width="16" height="16" fill="none"/>
+              </g>
+              <g id="icons_Q2-2" data-name="icons Q2" transform="translate(5.328 3.334)">
+                <path id="Path_93533" data-name="Path 93533" d="M1.605,4.666,5.138,1.133a.633.633,0,0,0-.067-1,.7.7,0,0,0-.9.067L.205,4.2a.633.633,0,0,0,0,.933l3.967,4a.7.7,0,0,0,.9.067.633.633,0,0,0,.067-1Z" fill="#35018b"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <text id="S-2" data-name="S" transform="translate(1326 161)" fill="#35018b" font-size="12" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-3" y="0">S</tspan></text>
+    </g>
+    <g id="Component_46_1" data-name="Component 46 – 1" transform="translate(1158 30)">
+      <g id="Options_Background" data-name="Options Background" fill="#fff" stroke="#cad8f9" stroke-width="1">
+        <rect width="175" height="47" rx="8" stroke="none"/>
+        <rect x="0.5" y="0.5" width="174" height="46" rx="7.5" fill="none"/>
+      </g>
+      <g id="plus" transform="translate(29 9.858) rotate(45)">
+        <g id="Rectangle_157453" data-name="Rectangle 157453" transform="translate(0 0)" fill="#35018b" stroke="#fff" stroke-width="1" opacity="0">
+          <rect width="20" height="20" stroke="none"/>
+          <rect x="0.5" y="0.5" width="19" height="19" fill="none"/>
+        </g>
+        <line id="Line_6125" data-name="Line 6125" y2="12" transform="translate(10.5 4)" fill="none" stroke="#35018b" stroke-linecap="round" stroke-width="2"/>
+        <line id="Line_6126" data-name="Line 6126" y2="12" transform="translate(16.5 10) rotate(90)" fill="none" stroke="#35018b" stroke-linecap="round" stroke-width="2"/>
+      </g>
+      <text id="Create" transform="translate(51 30)" fill="#35018b" font-size="16" font-family="Inter" font-weight="700"><tspan x="0" y="0">Create</tspan></text>
+    </g>
+  </g>
+</svg>

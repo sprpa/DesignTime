@@ -1,0 +1,191 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   gs-component .gs-component-value-text {
+   color: var(--gs-component-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+gs-component:not(.oj-complete) {
+  visibility: hidden;
+}
+
+gs-component {
+  min-height: 50px;
+  width: 50px;
+}
+
+gs-component[hidden] {
+  display: none;
+}
+
+.heading {
+  font-size: 10px;
+  line-height: 20px;
+}
+
+.mainHeading {
+  font-size: 12px;
+  color: #000000;
+  font-weight: 500;
+}
+
+.bredcum-wrap {
+  padding: 10px 40px 0px 18px;
+}
+
+.selectedTitle {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.headerGS {
+  border-bottom: 1px solid rgb(112 112 112 / 20%) !important;
+
+  .headingGroup {
+    display: flex;
+    margin: auto 0;
+    gap: 2px;
+  }
+
+  .oj-ux-ico-chevron-right {
+    font-size: 12px;
+    color: #000000;
+    opacity: 0.5;
+  }
+}
+
+.saveDraft {
+  border: 1px solid #023FE6;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #023FE6 !important;
+  height: 23px !important;
+  margin-right: 6px;
+  box-sizing: border-box;
+
+  .oj-button-label {
+    color: #023FE6 !important;
+  }
+
+  span.oj-button-text {
+    padding: 0px 8px !important;
+  }
+}
+
+.publish {
+  height: 23px;
+  background: #023FE6 0% 0% no-repeat padding-box;
+  border-radius: 6px 0px 0px 6px;
+  font-size: 12px;
+  color: #FFFFFF !important;
+  border: 1px solid #023FE6;
+  box-sizing: border-box;
+
+  span.oj-button-text {
+    padding: 0px 6px !important;
+  }
+
+  .oj-button-label {
+    color: #FFFFFF !important;
+  }
+}
+
+.selectedMenuTitle {
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 150px;
+}
+
+.breadcrumb-separator {
+  /* margin: 0 5px; */
+  color: gray;
+}
+
+.breadcrumb-item:last-child {
+  color: #000000;
+  opacity: 0.5;
+  font-weight: normal;
+}
+
+.publish-flx-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publish-arrow {
+  height: 23px;
+  background: #023FE6 0% 0% no-repeat padding-box;
+  border-radius: 0px 6px 6px 0px;
+  font-size: 12px;
+  color: #FFFFFF !important;
+  border: 1px solid #023FE6;
+  box-sizing: border-box;
+  border-left: 1px solid;
+  min-width: 24px;
+
+  span.oj-button-text {
+    padding: 0px !important;
+  }
+
+  span.oj-ux-ico-chevron-down.oj-button-icon.oj-end {
+    color: #fff !important;
+    font-size: 14px;
+  }
+
+  button.oj-button-button.oj-component-initnode {
+    background: transparent !important;
+  }
+}
+
+.right-expand-wrap {
+  display: flex;
+  justify-content: end;
+  .toggleButton-right {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    width: 17px;
+    height: 35px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 2px #00000029;
+    border: 0.4000000059604645px solid #A7BDF1;
+    border-radius: 4px;
+    opacity: 1;
+    padding: 0px;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9999;
+    cursor: pointer;
+  }
+
+}
+
+.gsComponent {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.withYaml {
+  grid-template-columns: 1fr 23.5%;
+}

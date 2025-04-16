@@ -1,0 +1,40 @@
+<!--
+  Copyright (c) 2015, 2025, Oracle and/or its affiliates.
+  Licensed under The Universal Permissive License (UPL), Version 1.0
+  as shown at https://oss.oracle.com/licenses/upl/
+
+-->
+<!-- <p><oj-bind-text value="[[messageText]]"></oj-bind-text></p> -->
+<!-- <oj-panel class="oj-sm-padding-2">
+  <small class="title">Yaml</small>
+  <pre class="manual-highlight">
+<span class="key">service</span>: <span class="string">my-service</span>
+
+<span class="key">provider</span>:
+  <span class="key">name</span>: <span class="string">aws</span>
+  <span class="key">runtime</span>: <span class="string">nodejs14.x</span>
+
+<span class="key">functions</span>:
+  <span class="key">create</span>:
+    <span class="key">handler</span>: <span class="function">handler.create</span>
+    <span class="key">events</span>:
+      <span class="boolean">-</span> <span class="key">http</span>:
+          <span class="key">path</span>: <span class="string">create</span>
+          <span class="key">method</span>: <span class="string">post</span>
+          <span class="key">cors</span>: <span class="boolean">true</span>
+
+<span class="key">resources</span>:
+  <span class="key">Resources</span>:
+    <span class="key">MyDynamoDBTable</span>:
+      <span class="key">Type</span>: <span class="string">AWS::DynamoDB::Table</span>
+      <span class="key">Properties</span>:
+        <span class="key">TableName</span>: <span class="string">MyTable</span>
+        <span class="key">AttributeDefinitions</span>:
+          <span class="boolean">-</span> <span class="key">AttributeName</span>: <span class="string">id</span>
+            <span class="key">AttributeType</span>: <span class="string">S</span>
+  </pre>
+</oj-panel> -->
+<oj-panel class="oj-sm-padding-2">
+  <small class="title">Yaml</small>
+  <pre><code class="language-yaml" data-bind="text: yamlCode"></code></pre>
+</oj-panel>

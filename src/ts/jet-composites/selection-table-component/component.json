@@ -1,0 +1,24 @@
+{
+  "name": "selection-table-component",
+  "version": "1.0.0",
+  "jetVersion": "^18.0.0",
+  "displayName": "A user friendly, translatable name of the component.",
+  "description": "A translatable high-level description for the component.",
+  "properties": {
+    "data": {
+      "type": "Array<object>",
+      "description": "Table data"
+    },
+    "dataClass": {
+      "type": "String",
+      "description": "Table class"
+    },
+    "attributesData": {
+      "type": "String",
+      "description": "Table TableKeyAttributes"
+    }
+  },
+  "methods": {},
+  "events": {},
+  "slots": {}
+}

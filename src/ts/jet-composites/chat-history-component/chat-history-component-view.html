@@ -1,0 +1,159 @@
+<div class="flex-ttl">
+    <h3>Chat </h3>
+    <img src="../../../assets/images/close.svg" alt="close" class="close-icon" data-bind="click:onClickClose">
+</div>
+<!-- 
+<div class="lft-dates-scl" data-bind="foreach: categories">
+
+    <oj-accordion id="a1" class="menuAccordion">
+        <oj-collapsible id="c1">
+
+            <h3 slot="header">
+                <span class="oj-ux-ico-folder oj-ux-icon-size-4x oj-sm-padding-1x-end"></span>
+                <span data-bind="text: title"></span>
+            </h3>
+            <div class="accordion-content">
+                <ul class="previous-date-list" data-bind="foreach: children">
+                    <li class="accordion_list" data-bind="click: function(data, event) { $parents[1].handleSelection(data, event); },
+                    css: { 'active': $parents[1].selectedItem() === $data }">
+                        <div data-bind="if: children.length == 0">
+                            <span class="oj-ux-ico-chevron-right icon-left"></span>
+                            <span data-bind="text: $data.title"></span>
+                        </div>
+                        <div class="child_menu" data-bind="if: children.length > 0">
+                            <oj-collapsible>
+                                <h3 slot="header">
+                                    <span data-bind="text: title"></span>
+                                </h3>
+                                <div data-bind="foreach: children">
+                                    <oj-collapsible>
+                                        <h3 slot="header">
+                                            <span data-bind="text: title"></span>
+                                        </h3>
+                                        <div class="accordion-content">
+                                            <ul class="previous-date-list" data-bind="foreach: children">
+                                                <li class="accordion_list"
+                                                    data-bind="click: function(data, event) { $parents[1].handleSelection(data, event); }">
+                                                    <div data-bind="if: children && children.length === 0">
+                                                        <span class="oj-ux-ico-chevron-right icon-left"></span>
+                                                        <span data-bind="text: title"></span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </oj-collapsible>
+                                </div>
+                            </oj-collapsible>
+                          
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </oj-collapsible>
+
+    </oj-accordion>
+</div> -->
+
+
+<!-- <div class="lft-dates-scl" data-bind="foreach: categories">
+    <div class="menuItem">
+        <span class="menu-header" data-bind="click: function() { expanded(!expanded()); }">
+            <div>
+                <span class="oj-ux-ico-folder oj-ux-icon-size-4x oj-sm-padding-1x-end"></span>
+                <span data-bind="text: title"></span>
+            </div>
+            <span data-bind="class: expanded() ? 'oj-ux-ico-chevron-down' : 'oj-ux-ico-chevron-right'"></span>
+        </span>
+
+        <div class="accordion-content" data-bind="visible: expanded">
+            <ul class="previous-date-list" data-bind="foreach: children">
+                <li class="accordion_list" data-bind="click: function(data, event) { $parents[1].handleSelection(data, event); },
+                    css: { 'active': $parents[1].selectedItem() === $data }">
+
+                    <div data-bind="if: !children || children.length === 0">
+                        <span class="oj-ux-ico-chevron-right icon-left"></span>
+                        <span data-bind="text: title"></span>
+                    </div>
+
+                    <div class="child_menu" data-bind="if: children && children.length > 0">
+                        <span class="sub-menu-header" data-bind="css: { 'active': expanded() }">
+                            <span
+                                data-bind="click: function() { expanded(!expanded()); },class: expanded() ? 'oj-ux-ico-chevron-down' : 'oj-ux-ico-chevron-right'"></span>
+                        </span>
+                        <span data-bind="text: title"></span>
+
+
+                        <div class="nested-content" data-bind="visible: expanded">
+                            <ul class="previous-date-list" data-bind="foreach: children">
+                                <li class="accordion_list"
+                                    data-bind="click: function(data, event) { $parents[1].handleSelection(data, event); }">
+                                    <div data-bind="if: !children || children.length === 0">
+                                        <span class="oj-ux-ico-chevron-right icon-left"></span>
+                                        <span data-bind="text: title"></span>
+                                    </div>
+                                    <div data-bind="if: children && children.length > 0">
+                                        <div data-bind="template: { name: 'collapsibleTemplate', data: $data }"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="collapsibleTemplate">
+    <div class="nested-menu">
+        <span class="sub-menu-header" 
+    data-bind="click: function() { expanded(!expanded()); }, 
+               css: { 'active': expanded() }">
+               <span data-bind="class: expanded() ? 'oj-ux-ico-chevron-down' : 'oj-ux-ico-chevron-right'"></span>
+            </span>
+    <span data-bind="text: title"></span>
+   
+
+        <div class="nested-content" data-bind="visible: expanded">
+            <ul class="previous-date-list" data-bind="foreach: children">
+                <li class="accordion_list"
+                    data-bind="click: function(data, event) { 
+                        if (!data.children || data.children.length === 0) { 
+                            $parents[1].handleSelection(data, event); 
+                        }
+                    }">
+                    <div data-bind="if: !children || children.length === 0">
+                        <span class="oj-ux-ico-chevron-right icon-left"></span>
+                        <span data-bind="text: title"></span>
+                    </div>
+                    <div data-bind="if: children && children.length > 0">
+                        <div data-bind="template: { name: 'collapsibleTemplate', data: $data }"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</script> -->
+
+
+
+<div class="chat-tree-view">
+    <oj-tree-view id="treeView" aria-label="Categories" data="[[treeDataProvider]]" selection-mode="single"
+        on-selection-changed="[[handleSelection]]">
+
+        <template slot="itemTemplate" data-oj-as="item">
+            <div class="tooltip-container">
+                <span class="treeListOverFlow" data-bind="mouseover: checkOverflow, mouseout: hideTooltip">
+                    <oj-bind-text value="[[item.data.title]]"></oj-bind-text>
+                </span>
+                <oj-bind-if test="[[item.data.title.length > 20]]">
+                    <div class="custom-tooltip">
+                        <oj-bind-text value="[[item.data.title]]"></oj-bind-text>
+                    </div>
+                </oj-bind-if>
+            </div>
+        </template>
+
+    </oj-tree-view>
+</div>

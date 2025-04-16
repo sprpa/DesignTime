@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_161762" data-name="Group 161762" width="20" height="20" viewBox="0 0 20 20">
+  <rect id="Rectangle_156977" data-name="Rectangle 156977" width="20" height="20" fill="#fff" opacity="0"/>
+  <g id="Icon_ion-briefcase-outline" data-name="Icon ion-briefcase-outline" transform="translate(4 4.75)">
+    <path id="Path_426410" data-name="Path 426410" d="M3.563,9h9.626A1.277,1.277,0,0,1,14.5,10.239v5.783a1.277,1.277,0,0,1-1.313,1.239H3.563A1.277,1.277,0,0,1,2.25,16.022V10.239A1.277,1.277,0,0,1,3.563,9Z" transform="translate(-2.25 -6.76)" fill="none" stroke="#013fe6" stroke-linejoin="round" stroke-width="0.7"/>
+    <path id="Path_426411" data-name="Path 426411" d="M5.313,6.74V5.62A1.02,1.02,0,0,1,6.188,4.5h4.375a1.02,1.02,0,0,1,.875,1.12V6.74M14.5,10.66H2.25m7.875,0v.84a.255.255,0,0,1-.219.28H6.844a.255.255,0,0,1-.219-.28v-.84" transform="translate(-2.25 -4.5)" fill="none" stroke="#013fe6" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+  </g>
+</svg>

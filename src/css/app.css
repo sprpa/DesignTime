@@ -1,0 +1,148 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+@import "variables.css";
+@import "table.css";
+@import "forms.css";
+
+body#globalBody {
+  overflow: hidden;
+}
+
+.imageGrid {
+  padding: 10px;
+  background-color: lightblue;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.mainSection {
+  display: grid;
+  grid-template-columns: 5.5% 1fr;
+  min-height: calc(100vh - 15px);
+  max-height: calc(100vh - 15px);
+  padding: 5px 10px 10px 10px;
+  background-color: #f6f6f6;
+}
+
+.mainSection.mainSectionWithHistory {
+  grid-template-columns: 5.5% 16% 1fr;
+
+}
+.mainSectionWithHistorywithOutChatWithYaml{
+  grid-template-columns: 5.5% 16% 1fr 16%;
+}
+.mainSectionWithHistorywithoutYML{
+  grid-template-columns: 5.5% 16% 20% 1fr;
+}
+
+.mainSection.mainSectionWithoutLeft {
+  grid-template-columns: 16% 1fr;
+}
+
+.mainSection.mainSectionWithBChat {
+  grid-template-columns: 16% 20% 1fr;
+}
+
+.mainSection.mainSectionWithOutBChat {
+  grid-template-columns: 16% 1fr 16%;
+}
+
+.mainSectionWithoutBChatAndWithYaml {
+  grid-template-columns: 5.5% 16% 1fr;
+
+}
+
+.mainSectionWithBChatAndWithChat {
+  grid-template-columns: 5.5% 16% 20% 1fr;
+
+}
+
+.flex-ttl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-ttl h3 {
+  color: #151515;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.lft-dates-scl {
+  overflow-y: scroll;
+  max-height: calc(100vh - 74px);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.leftNav {
+  box-shadow: 0px 3px 20px #e8e8e8c7;
+  position: relative;
+  max-height: calc(100vh - 15px);
+  border: 0.5px solid #023fe61c;
+  border-radius: 16px;
+  opacity: 1;
+}
+
+.middleGrid {
+  /* background: #f6f6f6; */
+  min-height: 96vh;
+  max-height: 96vh;
+  margin: 0% 0% 0% 0%;
+  /* padding-left: 15px; */
+}
+
+.send-off-screen {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.demo-oracle-icon {
+  width: 137px;
+  height: 18px;
+  content: url("images/oracle_logo.svg");
+}
+
+html:not([dir="rtl"]) .demo-oracle-icon {
+  padding-right: 4px;
+}
+
+html[dir="rtl"] .demo-oracle-icon {
+  padding-left: 4px;
+}
+
+.demo-oracle-icon:before {
+  display: inline;
+}
+
+.demo-appheader-avatar {
+  width: 24px;
+  height: 24px;
+}
+
+.demo-appheader-avatar:before {
+  content: url("images/avatar_24px.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi),
+(min-resolution: 1.5dppx) {
+  .demo-appheader-avatar:before {
+    content: url("images/avatar_24px_2x.png");
+    -webkit-transform: translate(-25%, -25%) scale(0.5);
+    transform: translate(-25%, -25%) scale(0.5);
+  }
+}

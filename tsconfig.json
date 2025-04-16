@@ -1,0 +1,118 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "strict": true,
+    "module": "amd",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "lib": [
+      "es2021",
+      "dom",
+      "esnext.asynciterable"
+    ],
+    "typeRoots": [
+      "./node_modules/@oracle/oraclejet/dist/types",
+      "./node_modules/@types"
+    ],
+    "paths": {
+      "ojs/*": [
+        "./node_modules/@oracle/oraclejet/dist/types/*"
+      ],
+      "@oracle/oraclejet-preact/*": [
+        "./node_modules/@oracle/oraclejet-preact/*"
+      ],
+      "oj-c/*": [
+        "./node_modules/@oracle/oraclejet-core-pack/oj-c/types/*"
+      ],
+      "preact": [
+        "./node_modules/preact"
+      ],
+      "header-component/*": [
+        "./src/ts/jet-composites/header-component/*"
+      ],
+      "footer-component/*": [
+        "./src/ts/jet-composites/footer-component/*"
+      ],
+      "left-sidemenu-component/*": [
+        "./src/ts/jet-composites/left-sidemenu-component/*"
+      ],
+      "right-sidemenu-component/*": [
+        "./src/ts/jet-composites/right-sidemenu-component/*"
+      ],
+      "chat-history-component/*": [
+        "./src/ts/jet-composites/chat-history-component/*"
+      ],
+      "chat-component/*": [
+        "./src/ts/jet-composites/chat-component/*"
+      ],
+      "home-component/*": [
+        "./src/ts/jet-composites/home-component/*"
+      ],
+      "dashboard-component/*": [
+        "./src/ts/jet-composites/dashboard-component/*"
+      ],
+      "main-component/*": [
+        "./src/ts/jet-composites/main-component/*"
+      ],
+      "list-component/*": [
+        "./src/ts/jet-composites/list-component/*"
+      ],
+      "accordion-component/*": [
+        "./src/ts/jet-composites/accordion-component/*"
+      ],
+      "selection-table-component/*": [
+        "./src/ts/jet-composites/selection-table-component/*"
+      ],
+      "agent-component/*": [
+        "./src/ts/jet-composites/agent-component/*"
+      ],
+      "drawio-component/*": [
+        "./src/ts/jet-composites/drawio-component/*"
+      ],
+      "entity-component/*": [
+        "./src/ts/jet-composites/entity-component/*"
+      ],
+      "workflow-component/*": [
+        "./src/ts/jet-composites/workflow-component/*"
+      ],
+      "gs-component/*": [
+        "./src/ts/jet-composites/gs-component/*"
+      ],
+      "function-component/*": [
+        "./src/ts/jet-composites/function-component/*"
+      ],
+      "subfunction-component/*": [
+        "./src/ts/jet-composites/subfunction-component/*"
+      ],
+      "tooltip-component/*": [
+        "./src/ts/jet-composites/tooltip-component/*"
+      ],
+      "bchat-component/*": [
+        "./src/ts/jet-composites/bchat-component/*"
+      ],
+      "baccordion-component/*": [
+        "./src/ts/jet-composites/baccordion-component/*"
+      ],
+      "codeview-component/*": [
+        "./src/ts/jet-composites/codeview-component/*"
+      ],
+      "finetune-component/*": [
+        "./src/ts/jet-composites/finetune-component/*"
+      ],
+      "register-component/*": [
+        "./src/ts/jet-composites/register-component/*"
+      ]
+    },
+    "declaration": true,
+    "noEmitOnError": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "removeComments": true
+  },
+  "include": [
+    "./src/ts/**/*"
+  ]
+}

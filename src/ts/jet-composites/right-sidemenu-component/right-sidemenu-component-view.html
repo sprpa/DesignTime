@@ -1,0 +1,33 @@
+<div class="rightToggle pointer" data-bind="click: togglePopup">
+  <span class="menu-icon oj-ux-ico-navigation-v"></span>
+</div>
+
+<div class="rightToggleMenu" :class="[[isPopupVisible() ? 'visible-popup' : '']]">
+
+  <p class="oj-sm-padding-2x-vertical oj-sm-margin-0 oj-flex oj-sm-justify-content-center oj-sm-align-items-center pointer"
+    data-bind="click: togglePopup">
+    <span class="oj-ux-ico-close"></span>
+  </p>
+
+  <oj-list-view :id="[[menuListId]]" data="[[menuDataProvider]]" selection-mode="single"
+    selected="{{selectedMenuItems}}">
+    <template slot="itemTemplate" data-oj-as="item">
+      <li class="menu-item oj-sm-padding-2x-vertical pointer custom-list-item">
+        <div class="oj-sm-align-items-center">
+          <span class="menu-icon" data-bind="attr: { class: item.data.icon }"></span>
+          <span class="oj-typography-body-md" data-bind="html: item.data.label"></span>
+        </div>
+      </li>
+    </template>
+  </oj-list-view>
+
+</div>
+
+<div id="sampleDemo" class="right-sidemenu" style="height: 100%;user-select: none;">
+
+  <div id="componentDemoContent">
+    <p>Recommendations</p>
+    <div class="right-box-border"> </div>
+  </div>
+
+</div>

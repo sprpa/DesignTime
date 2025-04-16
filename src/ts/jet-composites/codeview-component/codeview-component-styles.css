@@ -1,0 +1,84 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   codeview-component .codeview-component-value-text {
+   color: var(--codeview-component-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+codeview-component:not(.oj-complete) {
+  visibility: hidden;
+}
+
+codeview-component {
+  min-height: 50px;
+  width: 50px;
+}
+
+codeview-component[hidden] {
+  display: none;
+}
+
+.title {
+  padding: 0 16px;
+  font-size: 12px;
+  color: #999;
+  line-height: 1.4;
+}
+
+.manual-highlight {
+  overflow: auto;
+  height: calc(100vh - 65px);
+  background-color: #fff;
+  padding: 0 16px;
+  border-radius: 12px;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.manual-highlight .key {
+  color: #a08043;
+}
+
+.manual-highlight .string {
+  color: #70a664;
+}
+
+.manual-highlight .function {
+  color: #a08043;
+}
+
+.manual-highlight .boolean {
+  color: #488bbb;
+}
+
+.code-block {
+  background-color: #ffffff;
+  color: #f8f8f2;
+  padding: 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.code-block .keyword {
+  color: #a08043;
+  /* pinkish */
+}
+
+.code-block .value {
+  color: #a6e22e;
+  /* greenish */
+}
+
+.code-block .string {
+  color: #70a664;
+  /* yellowish */
+}

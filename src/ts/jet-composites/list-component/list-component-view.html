@@ -1,0 +1,17 @@
+<div class="oj-sm-text-align-start listItems">
+
+  <oj-list-view data="[[menuDataProvider]]" class="demo-list-view1 oj-sm-padding-2x-vertical">
+
+    <template slot="itemTemplate" data-oj-as="item">
+
+      <li class="menu-item oj-sm-padding-2x-vertical oj-sm-flex">
+        <div class="oj-sm-flex-item">
+          <oj-bind-text value="[[item.data.label]]"></oj-bind-text>
+        </div>
+      </li>
+
+    </template>
+
+  </oj-list-view>
+
+</div>

@@ -1,0 +1,15 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 17" width="15" height="17">
+	<title>home-active</title>
+	<style>
+		.s0 { fill: none;stroke: #013fe6;stroke-linecap: round;stroke-linejoin: round } 
+	</style>
+	<filter id="f0">
+		<feFlood flood-color="#000000" flood-opacity="1" />
+		<feBlend mode="normal" in2="SourceGraphic"/>
+		<feComposite in2="SourceAlpha" operator="in" />
+	</filter>
+	<g id="home" filter="url(#f0)">
+		<path id="Path_352535" class="s0" d="m0.5 5.8l6.8-5.3 6.8 5.3v8.3q0 0.3-0.2 0.5-0.1 0.3-0.3 0.5-0.2 0.2-0.5 0.4-0.2 0.1-0.5 0.1h-10.6q-0.3 0-0.6-0.1-0.2-0.2-0.5-0.4-0.2-0.2-0.3-0.5-0.1-0.2-0.1-0.5z"/>
+		<path id="Path_352536" class="s0" d="m5 15.6v-7.6h4.5v7.6"/>
+	</g>
+</svg>

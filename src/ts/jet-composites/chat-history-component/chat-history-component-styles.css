@@ -1,0 +1,235 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   chat-history-component .chat-history-component-value-text {
+   color: var(--chat-history-component-value-text-color);
+   display: inline-block;
+	 }
+*/
+chat-history-component:not(.oj-complete) {
+  visibility: hidden;
+}
+
+chat-history-component {
+  min-height: 50px;
+  width: 50px;
+}
+
+chat-history-component[hidden] {
+  display: none;
+}
+
+.lft-dates-scl {
+  padding: 0px !important;
+  overflow: hidden;
+}
+
+.accordion_list {
+  /* display: flex; */
+  align-items: center;
+  font-size: 12px;
+}
+.accordion_list .oj-ux-ico-chevron-right {
+  margin-right: 5px;
+}
+
+.left-chat-sec-popup ul.previous-date-list li {
+  margin-bottom: 0px !important;
+  cursor: pointer;
+  padding: 10px 5px;
+}
+
+.accordion_list.active {
+  background-color: rgba(0, 88, 255, 0.1019607843);
+  color: #0058FF;
+  font-weight: bold;
+}
+
+.menuItem {
+  padding-top: 8px;
+}
+
+.menuAccordion {
+  padding-top: 5px;
+}
+.menuAccordion .oj-collapsible-header-wrapper {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuAccordion .child_menu .oj-collapsible-header-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: start !important;
+  align-items: center;
+}
+.menuAccordion .child_menu span {
+  font-weight: normal !important;
+}
+.menuAccordion .child_menu .oj-collapsible-content {
+  background-color: transparent;
+  padding: 0 !important;
+  margin: 0;
+}
+.menuAccordion .oj-accordion-collapsible > .oj-collapsible-header-wrapper > .oj-collapsible-header-icon {
+  padding: 3px;
+  outline-offset: -9px;
+}
+.menuAccordion .sub-menu-header {
+  cursor: pointer;
+  padding: 8px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-header .oj-ux-ico-folder {
+  color: #0058FF !important;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.child_menu sub-menu-header .active {
+  background-color: #007bff !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.oj-collapsible-header {
+  color: var(--oj-heading-text-color);
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  position: relative;
+  margin: 0;
+  font-size: 12px !important;
+  gap: 5px;
+  font-weight: bold !important;
+  font-family: "Inter";
+  padding-left: 6px;
+}
+
+.oj-collapsible-content {
+  background-color: transparent;
+  padding-top: 0px !important;
+  margin: 0;
+}
+
+.oj-ux-ico-folder {
+  color: #0058FF !important;
+  border-radius: 2px;
+}
+
+.oj-accordion-collapsible > .oj-collapsible-wrapper > .oj-collapsible-content {
+  padding: 0px !important;
+}
+
+.oj-collapsible-header-wrapper .oj-collapsible-header-icon,
+.oj-collapsible-header-wrapper .oj-collapsible-header-icon:hover {
+  color: #0058FF !important;
+  font-size: 12px !important;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Pushes the icon to the right */
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.treeListOverFlow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 150px;
+  /* Adjust as needed */
+  cursor: pointer;
+}
+
+.custom-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background-color: white;
+  color: black;
+  text-align: left;
+  /* Align text to the left */
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 100%;
+  transform: translateX(0%);
+  width: 120px;
+  /* Fixed width */
+  white-space: normal;
+  /* Allows text wrapping */
+  transition: opacity 0.2s ease-in-out;
+  font-size: 10px;
+  font-weight: 500;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  z-index: 1000;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Tooltip Arrow */
+.tooltip-container:hover .custom-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.chat-tree-view {
+  overflow: auto;
+  height: calc(100vh - 70px);
+}
+.chat-tree-view .oj-treeview-select-single .oj-treeview-item-content.oj-selected {
+  box-shadow: none;
+  border-radius: 0;
+  color: #0058FF;
+}
+.chat-tree-view .oj-treeview-select-single .oj-treeview-item-content.oj-selected .oj-treeview-disclosure-icon.oj-treeview-icon {
+  color: #0058FF;
+}
+.chat-tree-view .oj-treeview-item-content.oj-selected {
+  background-color: rgba(0, 88, 255, 0.1019607843) !important;
+  color: #0058FF;
+  font-weight: bold;
+}
+.chat-tree-view .oj-treeview-item-content {
+  font-size: 12px;
+  color: #333333;
+  border-bottom: 1px solid #ededed;
+  padding: 0px 0px 0px 8px;
+}
+.chat-tree-view .oj-treeview-disclosure-icon,
+.chat-tree-view .oj-treeview-disclosure-icon.oj-treeview-icon {
+  font-size: 16px;
+  color: #333333;
+  padding-right: 2px;
+}
+.chat-tree-view .oj-treeview-item-content.oj-hover {
+  background-color: rgba(0, 88, 255, 0.1019607843) !important;
+}
+.chat-tree-view .oj-treeview-list > .oj-treeview-item > .oj-treeview-list > .oj-treeview-item > .oj-treeview-item-content > .oj-treeview-spacer {
+  width: 12px !important;
+}
+.chat-tree-view .oj-treeview-item .oj-expanded .oj-treeview-list .oj-treeview-item .oj-treeview-item-content .oj-treeview-spacer {
+  width: 26px !important;
+}
+.chat-tree-view .oj-treeview-item .oj-expanded .oj-treeview-list .oj-treeview-item .oj-treeview-list .oj-treeview-spacer {
+  width: 40px !important;
+}/*# sourceMappingURL=chat-history-component-styles.css.map */

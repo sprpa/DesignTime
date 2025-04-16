@@ -1,0 +1,38 @@
+<div style="display: grid;padding: 0px;width: 83vw;">
+  <oj-table aria-label="Organisation Structure & Roles" data="[[dataProvider]]" columns="[[columns]]" display="grid"
+    :class="[[tableClass]]" style="max-width: 100%; overflow-x: auto;" class="oj-table-styled"
+    on-selected-changed="[[selectedChangedListener]]" selection-mode='{"row": "multiple"}'>
+    <template slot="true" data-oj-as="cell">
+      <oj-bind-if test='[[cell.mode == "navigation"]]'>
+        <div class="user-journey-wrapper">
+       
+          <ul class="user-journey-list">
+            <oj-bind-for-each data="[[cell.data]]">
+              <template data-oj-as="step">
+                <li>
+                  <oj-bind-text value="[[step.data]]"></oj-bind-text>
+                </li>
+              </template>
+            </oj-bind-for-each>
+          </ul>
+        </div>
+        
+        
+
+        <ul class="user-journey-list">
+          <!-- <oj-bind-for-each data="[[cell.data]]">
+            <template data-oj-as="step">
+              <li>
+                <oj-bind-text value="[[step.data]]"></oj-bind-text>
+              </li>
+            </template>
+          </oj-bind-for-each> -->
+        </ul>
+      </oj-bind-if>
+    </template>
+    
+
+
+
+  </oj-table>
+</div>

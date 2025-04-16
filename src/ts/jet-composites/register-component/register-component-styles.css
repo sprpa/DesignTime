@@ -1,0 +1,22 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   register-component .register-component-value-text {
+   color: var(--register-component-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+register-component:not(.oj-complete){
+  visibility: hidden;
+}
+
+register-component{
+	min-height: 50px;
+	width: 50px;
+}
+
+register-component[hidden]
+{
+  display: none;
+}

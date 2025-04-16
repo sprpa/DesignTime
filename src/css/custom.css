@@ -1,0 +1,150 @@
+.right-sidemenu {
+    .oj-datepicker-prev-icon {
+        display: none !important;
+
+    }
+
+    .oj-datepicker-next-icon {
+        display: none !important;
+    }
+
+    .oj-datepicker-popup {
+        min-width: auto !important;
+        min-height: auto !important;
+    }
+
+    .oj-datepicker-header {
+        display: block !important;
+    }
+
+    .oj-datepicker-calendar td span,
+    .oj-datepicker-calendar td a {
+        width: 28px !important;
+        height: 35px !important;
+        max-width: auto !important;
+        max-height: auto !important;
+        margin-bottom: 1px !important;
+    }
+
+    .oj-datepicker-calendar td.oj-datepicker-today a {
+        margin: 0 1px !important;
+    }
+
+    .oj-datepicker-calendar td.oj-datepicker-today a.oj-selected,
+    .oj-datepicker-calendar td a.oj-selected {
+        margin: 0 1px !important;
+    }
+
+    .oj-datepicker-calendar td {
+        height: 2rem !important;
+    }
+
+    .oj-datepicker-calendar td {
+        font-size: 12px !important;
+        font-weight: 700 !important;
+    }
+
+    .oj-datepicker-inline .oj-datepicker-calendar.oj-datepicker-monthview td,
+    .oj-datepicker-inline .oj-datepicker-calendar.oj-datepicker-yearview td {
+        width: 3.25rem !important;
+    }
+
+    .oj-datepicker-calendar.oj-datepicker-monthview,
+    .oj-datepicker-calendar.oj-datepicker-yearview {
+        height: auto !important;
+    }
+
+    .oj-datepicker-calendar td.oj-datepicker-today a.oj-selected,
+    .oj-datepicker-calendar td a.oj-selected {
+        background-color: #6A1B9A !important;
+    }
+
+    .oj-datepicker-calendar td.oj-datepicker-today a {
+        border: 1px solid #6A1B9A !important;
+    }
+
+    .oj-datepicker-calendar td.oj-datepicker-today a.oj-hover,
+    .oj-datepicker-calendar td a.oj-hover {
+        background-color: #691b9a48 !important;
+    }
+
+    .oj-datepicker-calendar th {
+        font-weight: 900 !important;
+    }
+
+    .oj-datepicker-year {
+        display: none !important;
+    }
+
+    .oj-datepicker-month {
+        align-items: flex-start !important;
+        font-weight: 700 !important;
+        color: #6A1B9A !important;
+    }
+
+    .oj-datepicker-title {
+        margin: auto !important;
+        text-align: start !important;
+    }
+
+    .oj-datepicker-calendar td.oj-datepicker-today a.oj-selected {
+        outline-color: #6A1B9A !important;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    h1 h2 h3 h4 h5 h6 {
+        margin: 0px !important;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-between {
+        justify-content: space-between;
+    }
+
+    .my-auto {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+
+
+
+    .module_name {
+        font-size: 12px;
+        margin: 0px;
+    }
+
+    .read {
+
+        .read_more {
+            font-size: 10px;
+            font-weight: 600;
+            color: blue;
+        }
+
+        .updated_by {
+            font-size: 8px;
+            color: gray;
+            font-weight: 600;
+        }
+    }
+
+    .notification_list li {
+        padding: 0px !important;
+    }
+
+    .oj-datepicker-current-day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* #6A1B9A */
+
+

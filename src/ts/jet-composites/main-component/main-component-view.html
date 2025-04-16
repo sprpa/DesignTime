@@ -1,0 +1,72 @@
+<div class="demo-grid-sizes demo-flex-display">
+
+  <oj-bind-if test="[[isMainLayoutVisible()]]">
+    <div class="mainSection" :class="[[applyDynamicClass()]]">
+      <oj-bind-if test="[[isSideMenuVisible()]]">
+        <div style="height: 100%;">
+          <div class="leftNav" data-bind="visible: isSideMenuVisible">
+            <left-sidemenu-component></left-sidemenu-component>
+          </div>
+  
+        </div>
+      </oj-bind-if>
+      <!-- <div  class="leftNav" data-bind="visible: isSideMenuVisible">
+        <left-sidemenu-component></left-sidemenu-component>
+      </div> -->
+      <oj-bind-if test="[[isChatHistory()]]">
+        <div class="left-chat-sec-popup">
+          <button class="toggleButton" on-click="[[toggleSideMenu]]">
+            <oj-bind-text
+              :class="[[isSideMenuVisible() ? 'oj-ux-ico-chevron-left' : 'oj-ux-ico-chevron-right']]"></oj-bind-text>
+          </button>
+          <chat-history-component></chat-history-component>
+  
+        </div>
+      </oj-bind-if>
+  
+      <oj-bind-if test="[[shouldRenderGSICategoryChat()]]">
+        <div class="left-chat-sec-popup bchart-window">
+          <bchat-component bread-data="[[breadcrumbs()]]" data="[[selectedAccordionDataList()]]"></bchat-component>
+        </div>
+      </oj-bind-if>
+      <div class="middleGrid">
+        <oj-bind-if test="[[shouldRenderGSICategoryValue()]]">
+          <drawio-component data="[[selectedvalues()]]"></drawio-component>
+        </oj-bind-if>
+  
+        <oj-bind-if test="[[selectedvalues() === 'Chat']]">
+          <chat-component></chat-component>
+        </oj-bind-if>
+  
+        <oj-bind-if test="[[selectedvalues() === 'FineTune']]">
+         <finetune-component></finetune-component>
+        </oj-bind-if>
+        
+        <oj-bind-if test="[[shouldRenderGSICategory]]">
+          <gs-component titles="[[breadcrumbs()]]" selected="[[selectedvalues()]]"></gs-component>
+        </oj-bind-if>
+  
+      </div>
+      <oj-bind-if test="[[selectedFlag]]">
+        <div class="right-expand-wrap">
+          <button class="toggleButton-right" on-click="[[toggleSideMenuYml]]">
+            <span :class="[[isYamlMenuVisible() ? 'oj-ux-ico-chevron-left' : 'oj-ux-ico-chevron-right']]"></span>
+          </button>
+  
+          <oj-bind-if test="[[isYamlMenuVisible()]]">
+            <div class="left-chat-sec-popup">
+              <codeview-component></codeview-component>
+            </div>
+          </oj-bind-if>
+        </div>
+      </oj-bind-if>
+  
+    </div>
+  </oj-bind-if>
+
+  <div>
+    <home-component></home-component>
+  </div>
+
+ 
+</div>

@@ -1,0 +1,21 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   footer-component .footer-component-value-text {
+   color: var(--footer-component-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+footer-component:not(.oj-complete) {
+  visibility: hidden;
+}
+
+footer-component {
+  min-height: 50px;
+  width: 50px;
+}
+
+footer-component[hidden] {
+  display: none;
+}

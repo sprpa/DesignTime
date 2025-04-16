@@ -1,0 +1,7 @@
+.listItems ul {
+  text-align: left !important;
+  list-style: square !important;
+  padding-left: 10px;
+  margin-left: 10px;
+  font-weight: 500;
+}

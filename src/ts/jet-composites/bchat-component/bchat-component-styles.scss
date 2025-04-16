@@ -1,0 +1,97 @@
+.bchart-wrap {
+  padding: 10px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .bchat-box {
+    padding: 0;
+  }
+  .stackAccordion .bchat-box ol li {
+    padding-left: 0;
+  }
+  .message.user .bubble {
+    margin-left: 24px;
+    padding: 10px;
+  }
+  .message.bot .bubble {
+    background-color: #fff;
+    padding: 0;
+  }
+  .bchat-scrl {
+    min-height: auto;
+    height: calc(100vh - 164px);
+    overflow: auto;
+  }
+  .ol-list {
+    padding: 0px 20px;
+    margin-top: 0;
+    li {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+  .input-area.customInput.chat-container {
+    box-shadow: 0px 3px 20px #e8e8e8c7;
+    border: 0.5px solid #023fe61c;
+    border-radius: 16px;
+    width: 192px;
+    height: 184px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 18px 13px;
+    box-sizing: border-box;
+
+ 
+  .chatInput1{
+    .oj-text-field-container {
+      border: none !important;
+  }
+        .oj-text-field.oj-focus:not(.oj-read-only):not(.oj-invalid):not(.oj-warning) .oj-text-field-container {
+          border-color: #023fe6 !important;
+          box-shadow: none !important;
+      }
+  }
+    .oj-textarea-input {
+      height: 120px;
+      position: relative;
+      padding: 0px !important;
+      margin: 0px !important;
+      font-size: 14px;
+  }
+    input {
+      padding: 0px;
+      font-size: 14px;
+    }
+    .chat-icons {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+    }
+    .save-btn {
+      background: #023fe6;
+      color: #fff;
+      height: 29px;
+      border: 1px solid #023fe6;
+      border-radius: 4px;
+      box-sizing: border-box;
+      span.oj-button-text {
+        color: #fff;
+        padding: 6px 8px !important;
+      }
+      button.oj-button-button {
+        border: 1px solid #023fe6;
+      }
+    }
+    .oj-hover {
+      span.oj-button-text {
+        color: #023fe6;
+        padding: 6px 8px !important;
+      }
+    }
+  }
+  .end-icons {
+    justify-content: end !important;
+  }
+}

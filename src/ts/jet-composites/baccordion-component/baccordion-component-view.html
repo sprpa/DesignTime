@@ -1,0 +1,42 @@
+<div class="stackAccordionB" style="margin-bottom: 10px;">
+
+  <oj-accordion id="a1" data-oj-binding-provider="knockout" class="customBAccordion">
+
+    <oj-bind-for-each data="[[accordionData]]">
+
+      <template data-oj-as="item">  
+        <oj-collapsible id="[[item.data.id]]" expanded >
+          <h3 slot="header">
+            <span class="orderSort">
+              <oj-bind-text value="[[getLabel(item.data.id)]]"></oj-bind-text>
+            </span>
+            <oj-bind-text value="[[item.data.title]]"></oj-bind-text>
+          </h3>
+
+          <div>
+
+            <ol class="">
+             
+              <oj-bind-for-each data="[[item.data.items]]">
+              
+                <template data-oj-as="subItem">
+                  <li id="[[subItem.data.id]]">
+                    <oj-bind-text value="[[subItem.data.name]]"></oj-bind-text>
+                  </li>
+                </template>
+
+              </oj-bind-for-each>
+              
+            </ol>
+
+          </div>
+
+        </oj-collapsible>
+
+      </template>
+
+    </oj-bind-for-each>
+
+  </oj-accordion>
+
+</div>

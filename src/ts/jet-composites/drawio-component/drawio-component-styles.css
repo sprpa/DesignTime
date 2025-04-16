@@ -1,0 +1,22 @@
+/* This file is where css selectors for the component go.
+   There will be hard coded properties and properties controlled by variables, for example
+
+   drawio-component .drawio-component-value-text {
+   color: var(--drawio-component-value-text-color);
+   display: inline-block;
+	 }
+*/
+
+drawio-component:not(.oj-complete){
+  visibility: hidden;
+}
+
+drawio-component{
+	min-height: 50px;
+	width: 50px;
+}
+
+drawio-component[hidden]
+{
+  display: none;
+}

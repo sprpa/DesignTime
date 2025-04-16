@@ -1,0 +1,23 @@
+{
+  "name": "bchat-component",
+  "version": "1.0.0",
+  "jetVersion": "^18.0.0",
+  "displayName": "A user friendly, translatable name of the component.",
+  "description": "A translatable high-level description for the component.",
+  "properties": {
+    "data": {
+      "type": "object",
+      "value": []
+    },
+    "breadData":{
+      "type": "Array",
+      "value": []
+    },
+    "key": {
+      "type": "string"
+    }
+  },
+  "methods": {},
+  "events": {},
+  "slots": {}
+}
