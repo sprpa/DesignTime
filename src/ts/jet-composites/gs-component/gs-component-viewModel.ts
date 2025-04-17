@@ -24,7 +24,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     loader: ko.Observable<any> = ko.observable()
     messagePrompt: ko.Observable<any>;
     responseBind: ko.Observable<any> = ko.observable()
-    selectedOption = ko.observable<string>("java");
+    selectedOption = ko.observable<string>("prs");
     finalOutPut: ko.Observable<any> = ko.observable()
 
 
@@ -61,26 +61,26 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     handleMenuAction = (event: ojMenu.ojMenuAction) => {
         const selectedValue = event.detail.selectedValue;
         this.selectedOption(selectedValue);
-    
-        switch (selectedValue) {
-          case 'java':
-            this.finalOutPut(this.responseBind().java_code);
-            break;
-    
-          case 'yaml':
-            this.finalOutPut(this.responseBind().yaml_output);
-            break;
-    
-          case 'prs':
-            this.finalOutPut(this.responseBind().prescriptive_text);
-            break;
-    
-          default:
-            // Fallback to prs if no match
-            this.finalOutPut(this.responseBind().prescriptive_text);
+
+        switch (this.selectedOption()) {
+            case 'java':
+                this.finalOutPut(this.responseBind().java_code);
+                break;
+
+            case 'yaml':
+                this.finalOutPut(this.responseBind().yaml_output);
+                break;
+
+            case 'prs':
+                this.finalOutPut(this.responseBind().prescriptive_text);
+                break;
+
+            default:
+                // Fallback to prs if no match
+                this.finalOutPut(this.responseBind().prescriptive_text);
         }
     };
-    
+
     CreateSolution = async (message: any) => {
 
         // let finalResponse =

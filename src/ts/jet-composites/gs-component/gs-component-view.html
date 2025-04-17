@@ -80,9 +80,12 @@
       <accordion-component data="[[accordionData()]]"></accordion-component>
     </oj-bind-if> -->
 
-    <pre data-bind="text: finalOutPut"></pre>
+
 
   </div>
+</div>
+<div class="" style="width: 800px;overflow: auto;height: calc(100vh - 100px);padding: 20px;">
+  <pre data-bind="text: finalOutPut"></pre>
 </div>
 <div class="loader-overlay" :class="[[ loader() ? 'visible' : 'hidden' ]]">
   <div class="loader"></div>
