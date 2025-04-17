@@ -313,7 +313,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                 this.loader(true);
            
                 try {
-                    const response = await fetch("http://10.26.1.52:5004/create-user", {
+                    const response = await fetch("http://10.26.1.52:5150/create-user", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(ko.toJS(this.userData)),

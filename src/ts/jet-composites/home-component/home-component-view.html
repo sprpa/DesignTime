@@ -1,12 +1,14 @@
 <div class="home-container">
+  
+  <oj-button chroming="borderless" class="login-button oj-sm-margin-4x-end" on-oj-action="[[openUserDialog]]">
+    Register
+  </oj-button>
 
   <oj-button chroming="borderless" class="login-button" on-oj-action="[[onStartClick]]">
     Log In
   </oj-button>
   
-  <oj-button chroming="borderless" class="login-button" on-oj-action="[[openUserDialog]]">
-    Register
-  </oj-button>
+ 
 
   <oj-dialog id="userDialog" modality="modal" class="addUserModal">
     <!-- <p>Profile Pic</p> -->

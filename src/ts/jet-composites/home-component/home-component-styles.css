@@ -42,8 +42,8 @@ home-component[hidden] {
 }
 
 .home-container button {
-  padding: 1rem 3rem;
-  font-size: 16px;
+  padding: 1rem 2rem;
+  font-size: 14px;
 }
 
 .addUserModal {
