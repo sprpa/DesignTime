@@ -2,21 +2,22 @@
   <div class="bredcum-wrap">
     <div class="headerGS">
       <div class="oj-flex oj-sm-flex-items-initial oj-sm-justify-content-space-between">
-        <div class="headingGroup" style="">
+        <div class="headingGroup" style=" margin-bottom: 10px;">
           <div class="breadcrumb">
             <!-- Loop through firstList -->
-            <oj-bind-for-each data="[[firstList]]">
+            <!-- <oj-bind-for-each data="[[firstList]]">
               <template>
                 <span class="breadcrumb-item">
-                  <oj-bind-text value="[[$current.data]]"></oj-bind-text>
-                </span>
-                <span class="breadcrumb-separator oj-ux-ico-chevron-right"></span>
-              </template>
-            </oj-bind-for-each>
+                 
+                </span> -->
+            <oj-bind-text value="CRM"></oj-bind-text>
+            <span class="breadcrumb-separator oj-ux-ico-chevron-right"></span>
+            <!-- </template>
+            </oj-bind-for-each> -->
 
             <!-- Last Item (Separate for Styling) -->
             <span class="breadcrumb-item last">
-              <oj-bind-text value="[[lastItem]]"></oj-bind-text>
+              <oj-bind-text value="GSI"></oj-bind-text>
             </span>
           </div>
 
@@ -25,40 +26,64 @@
             <oj-bind-text value="[[menuTitle]]"></oj-bind-text> -->
 
         </div>
-        
+
+
         <div>
-       
-            <div class="publish-flx-btns">
-              <oj-button class="saveDraft" chroming="borderless">
-                Save as Draft
-              </oj-button>
-              <oj-button class="publish" chroming="borderless">
-                Publish
-              </oj-button>
-              <oj-menu-button chroming="borderless" display="icons" class="publish-arrow">
-                <span slot="endIcon" class="oj-ux-ico-chevron-down"></span>
-                <oj-menu slot="menu">
-                  <oj-option value="yaml">
-                    YAML
-                  </oj-option>
-                  <oj-option value="json">
-                    JSON
-                  </oj-option>
-                </oj-menu>
-              </oj-menu-button>
-            </div>
-        
+
+          <div class="publish-flx-btns" style="margin-bottom:10px ;">
+
+            <oj-button class="publish" chroming="borderless">
+              View
+            </oj-button>
+
+            <oj-menu-button chroming="borderless" display="icons" style="margin-right:10px;" class="publish-arrow">
+              <span slot="endIcon" class="oj-ux-ico-chevron-down"></span>
+
+              <oj-menu slot="menu" on-oj-menu-action="[[handleMenuAction]]">
+                <oj-option value="prs">Perspective Sentence</oj-option>
+                <oj-option value="java">JAVA</oj-option>
+                <oj-option value="yaml">YAML</oj-option>
+              </oj-menu>
+
+            </oj-menu-button>
+
+
+            <oj-button class="saveDraft" chroming="borderless">
+              Save as Draft
+            </oj-button>
+            <oj-button class="publish" chroming="borderless">
+              Publish
+            </oj-button>
+            <oj-menu-button chroming="borderless" display="icons" class="publish-arrow">
+              <span slot="endIcon" class="oj-ux-ico-chevron-down"></span>
+              <oj-menu slot="menu">
+                <oj-option value="yaml">
+                  YAML
+                </oj-option>
+                <oj-option value="json">
+                  JSON
+                </oj-option>
+              </oj-menu>
+            </oj-menu-button>
+          </div>
+
         </div>
 
       </div>
-
+      <!-- 
       <span class="heading">Natural Language Use Case for CRM System (Now includes explicit entities, attributes,
-        enumerations, and dependencies across all stacks.)</span>
+        enumerations, and dependencies across all stacks.)</span> -->
     </div>
 
 
-    <oj-bind-if test="[[ accordionData()?.length > 0 ]]">
+    <!-- <oj-bind-if test="[[ accordionData()?.length > 0 ]]">
       <accordion-component data="[[accordionData()]]"></accordion-component>
-    </oj-bind-if>
+    </oj-bind-if> -->
+
+    <pre data-bind="text: finalOutPut"></pre>
+
   </div>
+</div>
+<div class="loader-overlay" :class="[[ loader() ? 'visible' : 'hidden' ]]">
+  <div class="loader"></div>
 </div>

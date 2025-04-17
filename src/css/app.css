@@ -48,7 +48,7 @@ body#globalBody {
 }
 
 .mainSection.mainSectionWithBChat {
-  grid-template-columns: 16% 20% 1fr;
+  grid-template-columns: 16% 16% 1fr;
 }
 
 .mainSection.mainSectionWithOutBChat {
@@ -72,7 +72,7 @@ body#globalBody {
 }
 
 .mainSectionWithChatH{
-  grid-template-columns: 5.5% 16% 20% 1fr;
+  grid-template-columns: 5.5% 16% 16% 1fr;
 }
 
 .flex-ttl {

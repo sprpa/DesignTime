@@ -135,20 +135,20 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             }
 
             // Dispatch custom event with selected node data
-            const selectionEvent = new CustomEvent("selectedvalues", {
-                detail: selectedNode,
-                bubbles: true
-            });
-            this.composite.dispatchEvent(selectionEvent);
+            // const selectionEvent = new CustomEvent("selectedvalues", {
+            //     detail: selectedNode,
+            //     bubbles: true
+            // });
+            // this.composite.dispatchEvent(selectionEvent);
 
-            const selectionBreadCrumb = new CustomEvent("selectedBread", {
-                detail: { 
-                    selectedTitles, 
-                    flag: flag || ''  // Ensure flag is properly set
-                },  
-                bubbles: true
-            });
-            this.composite.dispatchEvent(selectionBreadCrumb);
+            // const selectionBreadCrumb = new CustomEvent("selectedBread", {
+            //     detail: { 
+            //         selectedTitles, 
+            //         flag: flag || ''  // Ensure flag is properly set
+            //     },  
+            //     bubbles: true
+            // });
+            // this.composite.dispatchEvent(selectionBreadCrumb);
             
             
         }
@@ -193,21 +193,44 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
 
     getIntialContent = async () => {
         try {
-            const response = await fetch("http://10.26.1.52:5003/tree", {
-                method: "GET",
-                headers: { "Content-Type": "application/json" },
-            });
+            // const response = await fetch("http://10.26.1.52:5003/tree", {
+            //     method: "GET",
+            //     headers: { "Content-Type": "application/json" },
+            // });
 
-            if (!response.ok) {
-                throw new Error(`Server error: ${response.status} ${response.statusText}`);
-            }
+            // if (!response.ok) {
+            //     throw new Error(`Server error: ${response.status} ${response.statusText}`);
+            // }
 
-            const finalResponse = await response.json();
+            const finalResponse = 
+                [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "id": "1",
+                                "title": "Agent"
+                            },
+                            {
+                                "children": [],
+                                "id": "2",
+                                "title": "Entity Model"
+                            },
+                            {
+                                "children": [],
+                                "id": "3",
+                                "title": "WorkFlows"
+                            },
+                        ],
+                        "id": "0",
+                        "title": "CRM"
+                    }
+                ]
 
             if (Array.isArray(finalResponse)) {
                 this.categories(finalResponse);
                 this.treeDataProvider(
-                    new ArrayTreeDataProvider(this.categories(), {
+                    new ArrayTreeDataProvider(finalResponse, {
                         keyAttributes: "id",
                         childrenAttribute: "children",
                     })

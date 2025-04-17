@@ -248,57 +248,57 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         }
     };
 
-    CreateSolution = async (message : any) => {
+    // CreateSolution = async (message : any) => {
 
-        // let finalResponse =
+    //     // let finalResponse =
 
 
-        this.loader(true);
-        const payload={
-            "message": message
-          }
+    //     this.loader(true);
+    //     const payload={
+    //         "message": message
+    //       }
           
 
-        try {
-            const response = await fetch("http://10.26.1.52:8010/api/chat", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body : JSON.stringify(payload)
-            });
+    //     try {
+    //         const response = await fetch("http://10.26.1.52:8010/api/chat", {
+    //             method: "POST",
+    //             headers: { "Content-Type": "application/json" },
+    //             body : JSON.stringify(payload)
+    //         });
 
-            if (!response.ok) {
-                throw new Error(`Server error: ${response.status} ${response.statusText}`);
-            }
+    //         if (!response.ok) {
+    //             throw new Error(`Server error: ${response.status} ${response.statusText}`);
+    //         }
 
-            let finalResponse;
-            try {
-                finalResponse = await response.json();
-                console.log(finalResponse)
-                const message = new CustomEvent("messageResponce", {
-                    detail: { flag: finalResponse },
-                    bubbles: true
-                });
-                this.composite.dispatchEvent(message);
+    //         let finalResponse;
+    //         try {
+    //             finalResponse = await response.json();
+    //             console.log(finalResponse)
+    //             const message = new CustomEvent("messageResponce", {
+    //                 detail: { flag: finalResponse },
+    //                 bubbles: true
+    //             });
+    //             this.composite.dispatchEvent(message);
 
-                // this.keyAttribute(finalResponse?.TableKeyAttributes)
-                // this.pushArrayName(finalResponse?.push_array_name)
+    //             // this.keyAttribute(finalResponse?.TableKeyAttributes)
+    //             // this.pushArrayName(finalResponse?.push_array_name)
 
 
-                // this.nextSteps(finalResponse.nextStep);
-            } catch (jsonError) {
-                throw new Error("Invalid JSON response from server.");
-            }
+    //             // this.nextSteps(finalResponse.nextStep);
+    //         } catch (jsonError) {
+    //             throw new Error("Invalid JSON response from server.");
+    //         }
 
-            // Add bot's response to chat
-            // this.messages.push(finalResponse);
+    //         // Add bot's response to chat
+    //         // this.messages.push(finalResponse);
 
-        } catch (error) {
-            console.error("Error sending query:", error);
-        } finally {
-            this.loader(false);
-            this.scrollToBottom();
-        }
-    };
+    //     } catch (error) {
+    //         console.error("Error sending query:", error);
+    //     } finally {
+    //         this.loader(false);
+    //         this.scrollToBottom();
+    //     }
+    // };
 
     handleChipClick = (event: any): void => {
         const clickedButton = event.target as HTMLElement;
@@ -368,7 +368,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             // if (newMessage !== "") {
             this.userMessage(newMessage); // Manually update observable
             this.userMessage.valueHasMutated(); // Ensure UI refresh
-            this.sendMessage(); // Send message
+            // this.sendMessage(); // Send message
             const message = new CustomEvent("promptEntered", {
                 detail: { flag: newMessage },
                 bubbles: true
@@ -414,7 +414,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             h5: messageText,
         };
 
-        this.CreateSolution(messageText);
+        // this.CreateSolution(messageText);
         this.messages.push(newMessage);
 
         // Recreate DataProvider to force UI update

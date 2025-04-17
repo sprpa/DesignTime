@@ -87,6 +87,8 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             this.promptEntered(customEvent.detail.flag); // Access 'detail' safely
             this.selectedvalues("")
             this.shouldRenderGSICategory(true)
+            this.isChatHistory(true);
+            this.shouldRenderGSICategoryChat(true)
         });
         context.element.addEventListener("messageResponce", (event: Event) => {
             const customEvent = event as CustomEvent; // Type cast to CustomEvent

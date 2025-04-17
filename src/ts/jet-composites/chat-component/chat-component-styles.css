@@ -791,7 +791,7 @@ opacity: 1;
   min-height: calc(100vh - 12px);
   max-height: calc(100vh - 12px);
   box-sizing: border-box;
-  z-index: 9999;
+  z-index: 9;
 }
 .left-chat-sec-popup .flex-ttl {
   display: flex;
