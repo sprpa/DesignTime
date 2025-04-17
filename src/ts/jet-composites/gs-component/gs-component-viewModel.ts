@@ -6,6 +6,7 @@ import Context = require("ojs/ojcontext");
 import Composite = require("ojs/ojcomposite");
 import "ojs/ojknockout";
 import 'ojs/ojbutton';
+import { ojMenu } from "ojs/ojmenu";
 
 export default class ViewModel implements Composite.ViewModel<Composite.PropertiesType> {
     busyResolve: (() => void);
@@ -20,6 +21,11 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     firstList = ko.observableArray<string>([]);
     lastItem = ko.observable<string>("");
     isYamlMenuVisible = ko.observable(false);
+    loader: ko.Observable<any> = ko.observable()
+    messagePrompt: ko.Observable<any>;
+    responseBind: ko.Observable<any> = ko.observable()
+    selectedOption = ko.observable<string>("java");
+    finalOutPut: ko.Observable<any> = ko.observable()
 
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
@@ -39,14 +45,90 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.accordionData = ko.observable()
 
         this.selectedMenuTitle = ko.observable(this.properties.titles)
+        this.messagePrompt = ko.observable(this.properties.message)
+        console.log(this.messagePrompt())
+        this.CreateSolution(this.messagePrompt())
+        console.log(this.responseBind())
 
         this.updateBreadcrumbs(this.selectedMenuTitle());
         this.menuTitle = ko.observable(context.properties.selected || ""); // Initialize with selected value
-       
+
 
         //Once all startup and async activities have finished, relocate if there are any async activities
         this.busyResolve();
     }
+
+    handleMenuAction = (event: ojMenu.ojMenuAction) => {
+        const selectedValue = event.detail.selectedValue;
+        this.selectedOption(selectedValue);
+    
+        switch (selectedValue) {
+          case 'java':
+            this.finalOutPut(this.responseBind().java_code);
+            break;
+    
+          case 'yaml':
+            this.finalOutPut(this.responseBind().yaml_output);
+            break;
+    
+          case 'prs':
+            this.finalOutPut(this.responseBind().prescriptive_text);
+            break;
+    
+          default:
+            // Fallback to prs if no match
+            this.finalOutPut(this.responseBind().prescriptive_text);
+        }
+    };
+    
+    CreateSolution = async (message: any) => {
+
+        // let finalResponse =
+        this.loader(true);
+
+
+        const payload = {
+            "message": message
+        }
+
+
+        try {
+            const response = await fetch("http://10.26.1.52:8010/api/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status} ${response.statusText}`);
+            }
+
+            let finalResponse;
+            try {
+                finalResponse = await response.json();
+                console.log(finalResponse)
+                this.responseBind(finalResponse)
+
+
+                // this.keyAttribute(finalResponse?.TableKeyAttributes)
+                // this.pushArrayName(finalResponse?.push_array_name)
+
+
+                // this.nextSteps(finalResponse.nextStep);
+            } catch (jsonError) {
+                throw new Error("Invalid JSON response from server.");
+            }
+
+            // Add bot's response to chat
+            // this.messages.push(finalResponse);
+
+        } catch (error) {
+            console.error("Error sending query:", error);
+        } finally {
+            this.loader(false);
+        }
+    };
+
 
     // //Lifecycle methods - implement if necessary 
     // toggleSideMenu = () => {

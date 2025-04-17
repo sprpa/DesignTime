@@ -12,6 +12,10 @@
     "titles": {
       "type": "Array",
       "value": []
+    },
+    "message":{
+      "type": "String",
+      "value": []
     }
   },
   "methods": {},
