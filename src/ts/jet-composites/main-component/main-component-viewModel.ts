@@ -32,6 +32,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     selectedFlag: ko.Observable<any>;
     isMainLayoutVisible: ko.Observable<boolean>;
     userInfo = ko.observable<any>(null);
+    promptEntered= ko.observable("");
 
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
@@ -75,9 +76,24 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         // Listen for the custom event
         context.element.addEventListener("buttonToggle", (event: Event) => {
             const customEvent = event as CustomEvent; // Type cast to CustomEvent
+            console.log(customEvent.detail.flag)
             this.isChatHistory(customEvent.detail.flag); // Access 'detail' safely
             this.isSideMenuVisible(!customEvent.detail.flag); // Access 'detail' safely
         });
+
+        context.element.addEventListener("promptEntered", (event: Event) => {
+            const customEvent = event as CustomEvent; // Type cast to CustomEvent
+            console.log(customEvent.detail.flag)
+            this.promptEntered(customEvent.detail.flag); // Access 'detail' safely
+            this.selectedvalues("")
+            this.shouldRenderGSICategory(true)
+        });
+        context.element.addEventListener("messageResponce", (event: Event) => {
+            const customEvent = event as CustomEvent; // Type cast to CustomEvent
+            console.log("HIIIIII",customEvent.detail.flag)
+           
+        });
+     
 
         context.element.addEventListener("chatOpen", (event: Event) => {
             const customEvent = event as CustomEvent; // Type cast to CustomEvent
@@ -124,13 +140,13 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             this.shouldRenderGSICategoryChat(false); // 🔁 Reset chat render
 
             // Example condition — render only if flag contains 'CHAT' or something similar
-            const shouldRenderChat = this.flag().includes("GSI");
+            // const shouldRenderChat = this.flag().includes("GSI");
 
             setTimeout(() => {
                 this.selectedAccordionData(newData);
                 this.selectedAccordionDataList.removeAll(); // Clears the array
                 this.selectedAccordionDataList.push(newData); // Then push the new data
-                this.shouldRenderGSICategoryChat(shouldRenderChat); // ✅ trigger render
+                this.shouldRenderGSICategoryChat(true); // ✅ trigger render
                 this.isYamlMenuVisible(false)
                 this.isGSICategory();
             }, 0);
@@ -330,7 +346,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.previousSelectedTitles(currentSelected);
         this.previousSelectedTitles.valueHasMutated();
         this.selectedAccordionData([]);
-        let shouldRender = this.flag().includes("GSI");
+        let shouldRender = true;
         this.selectedFlag(shouldRender);
 
         // ✅ Force UI refresh using observable
@@ -351,23 +367,36 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
 
         if (this.isChatHistory() && this.isSideMenuVisible() && !this.shouldRenderGSICategory() && !this.selectedYaml()) {
             dynamicClass = 'mainSectionWithHistory';
-        } else if (this.isChatHistory() && this.isSideMenuVisible() && !this.shouldRenderGSICategory()) {
+        } 
+        else if (this.isChatHistory() && this.isSideMenuVisible() && !this.shouldRenderGSICategory()) {
             dynamicClass = 'mainSectionWithBChatAndWithChat';
         } else if (this.isChatHistory() && !this.isSideMenuVisible() && !this.shouldRenderGSICategory()) {
             dynamicClass = 'mainSectionWithoutLeft';
-        } else if (this.shouldRenderGSICategory() && this.shouldRenderGSICategoryChat() && !this.isSideMenuVisible()) {
+        } else if (this.isChatHistory() && this.shouldRenderGSICategory() && this.shouldRenderGSICategoryChat() && !this.isSideMenuVisible()) {
             dynamicClass = 'mainSectionWithBChat';
         }
-        else if (this.shouldRenderGSICategory() && this.isSideMenuVisible() && !this.shouldRenderGSICategoryChat() && !this.selectedYaml()) {
-            dynamicClass = 'mainSectionWithBChatAndMenu';
+        else if (this.shouldRenderGSICategory() && this.isSideMenuVisible() && this.isChatHistory() && this.shouldRenderGSICategoryChat() && !this.selectedYaml()) {
+            dynamicClass = 'mainSectionWithChatH';
         } else if (this.isChatHistory() && this.selectedYaml() && this.shouldRenderGSICategory() && this.isSideMenuVisible() && !this.shouldRenderGSICategoryChat()) {
             dynamicClass = 'mainSectionWithHistorywithOutChatWithYaml';
+        }
+        else if (this.isSideMenuVisible() && this.isChatHistory() && !this.selectedYaml() && this.shouldRenderGSICategory() && this.isSideMenuVisible() && this.shouldRenderGSICategoryChat()) {
+            dynamicClass = 'mainSectionWithHistory1';
         }
         else if (this.isChatHistory() && !this.selectedYaml() && this.shouldRenderGSICategory() && this.isSideMenuVisible() && this.shouldRenderGSICategoryChat()) {
             dynamicClass = 'mainSectionWithHistorywithoutYML';
         }
         else if (this.isChatHistory() && !this.shouldRenderGSICategoryChat() && this.selectedYaml()) {
             dynamicClass = "mainSectionWithOutBChat"
+        }
+        else if (!this.isChatHistory() && this.shouldRenderGSICategoryChat() && this.isSideMenuVisible() && this.shouldRenderGSICategory() ) {
+            dynamicClass = "mainSectionWithOutBChat2"
+        }
+        // else if (!this.isChatHistory() && this.shouldRenderGSICategoryChat() && this.isSideMenuVisible() && this.shouldRenderGSICategory() ) {
+        //     dynamicClass = "mainSectionWithOutBChat2"
+        // }
+        else if (this.isSideMenuVisible() && !this.isChatHistory() && this.shouldRenderGSICategory() && this.isYamlMenuVisible()){
+            dynamicClass = "mainSectionWithOutBChat3"
         }
         return dynamicClass;
     }

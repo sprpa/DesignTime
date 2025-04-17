@@ -273,6 +273,12 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             let finalResponse;
             try {
                 finalResponse = await response.json();
+                console.log(finalResponse)
+                const message = new CustomEvent("messageResponce", {
+                    detail: { flag: finalResponse },
+                    bubbles: true
+                });
+                this.composite.dispatchEvent(message);
 
                 // this.keyAttribute(finalResponse?.TableKeyAttributes)
                 // this.pushArrayName(finalResponse?.push_array_name)
@@ -363,6 +369,12 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             this.userMessage(newMessage); // Manually update observable
             this.userMessage.valueHasMutated(); // Ensure UI refresh
             this.sendMessage(); // Send message
+            const message = new CustomEvent("promptEntered", {
+                detail: { flag: newMessage },
+                bubbles: true
+            });
+            this.composite.dispatchEvent(message);
+
 
             setTimeout(() => {
                 this.userMessage(""); // Clear input field

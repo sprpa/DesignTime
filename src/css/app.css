@@ -39,6 +39,9 @@ body#globalBody {
 .mainSectionWithHistorywithoutYML{
   grid-template-columns: 5.5% 16% 20% 1fr;
 }
+.mainSectionWithHistory1{
+  grid-template-columns: 5.5% 16% 20% 1fr;
+}
 
 .mainSection.mainSectionWithoutLeft {
   grid-template-columns: 16% 1fr;
@@ -51,6 +54,13 @@ body#globalBody {
 .mainSection.mainSectionWithOutBChat {
   grid-template-columns: 16% 1fr 16%;
 }
+.mainSection.mainSectionWithOutBChat2 {
+  grid-template-columns: 5.5% 16% 1fr;
+}
+
+.mainSection.mainSectionWithOutBChat3 {
+  grid-template-columns: 5.5% 1fr 16%;
+}
 
 .mainSectionWithoutBChatAndWithYaml {
   grid-template-columns: 5.5% 16% 1fr;
@@ -59,7 +69,10 @@ body#globalBody {
 
 .mainSectionWithBChatAndWithChat {
   grid-template-columns: 5.5% 16% 20% 1fr;
+}
 
+.mainSectionWithChatH{
+  grid-template-columns: 5.5% 16% 20% 1fr;
 }
 
 .flex-ttl {
