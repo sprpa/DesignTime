@@ -183,7 +183,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                 localStorage.setItem("access_token", access_token);
                 localStorage.setItem("refresh_token", refresh_token);
 
-                // Now show main layout
+                // Now show main layo
                 this.isMainLayoutVisible(true);
 
                 // Optional: Clean up the URL

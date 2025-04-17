@@ -22,13 +22,14 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     res: { [key: string]: string };
 
     loader: ko.Observable<boolean>;
-    userData: ko.Observable<{ name: string; username: string; roleValue: string; email: string; mobileNo: string; statusValue: string; profilefileNames: string }>;
+    userData: ko.Observable<{ name: string; username: string; roleValue: string; email: string; mobileNo: string;  profilePic: string ; OrgName:string; Pwd:string}>;
     nameValidator: ko.ObservableArray<any>;
+    orgValidator: ko.ObservableArray<any>;
+    profilePic = ko.observable('');
     usernameValidator: ko.ObservableArray<any>;
     emailValidator: ko.ObservableArray<any>;
     mobileValidator: ko.ObservableArray<any>;
-    statusValidator: ko.ObservableArray<any>;
-
+    roleValidator: ko.ObservableArray<any>;
     selectedValues: ko.ObservableArray<string>; // Stores selected 'value'
     selectedIds: ko.Computed<string>; // Stores computed 'id' values
     optionsList: ko.ObservableArray<{ id: string; value: string; name: string }>;
@@ -41,7 +42,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     selectedColumnsArray = ko.observableArray<string>([]);
     isSearchIconClicked = ko.observable<boolean>(false);
     roledata: ArrayDataProvider<string, { id: string; value: string; name: string }>;
-    dataProviderrr: ArrayDataProvider<string, { id: string; value: string; name: string }>;
+    profilePicSrc: ko.PureComputed<string>;
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
         const elementContext: Context = Context.getContext(context.element);
@@ -54,22 +55,21 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.res = componentStrings["home-component"];
         this.selectedValues = ko.observableArray<string>(["HTML", "CSS"]);
         this.loader = ko.observable(false);
-
+        this.profilePicSrc = ko.pureComputed(() => {
+            const pic = this.userData()?.profilePic;
+            return pic ? pic : '../../../assets/images/profile-new.png';
+        });
         this.selectProfileListener = this.selectProfileListener.bind(this);
         this.selectProfileFiles = this.selectProfileFiles.bind(this);
         const rolesList = [
-            { id: "1", value: "Sales Manager", name: "Sales Manager" },
-            { id: "2", value: "Administrator", name: "Administrator" },
-            { id: "3", value: "Sales Director", name: "Sales Director" },
+            { id: "1", value: "Admin", name: "Admin" },
+            { id: "2", value: "Approver", name: "Approver" },
+            { id: "3", value: "Designer", name: "Designer" },
         ];
 
-        const status = [
-            { id: "1", value: "Active", name: "Active" },
-            { id: "2", value: "InActive", name: "InActive" },
-        ];
+    
 
-        this.roledata = new ArrayDataProvider(rolesList, { keyAttributes: "id" });
-        this.dataProviderrr = new ArrayDataProvider(status, { keyAttributes: "id" });
+        this.roledata = new ArrayDataProvider(rolesList, { keyAttributes: "value" });
 
 
         this.userData = ko.observable({
@@ -78,13 +78,29 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             roleValue: "",
             email: "",
             mobileNo: "",
-            statusValue: "",
-            profilefileNames: ""
+            profilePic: "",
+            OrgName:"",
+            Pwd:""
 
         });
 
         // Define AsyncRegExpValidator for Name (Only letters and spaces)
         this.nameValidator = ko.observableArray([
+            new RequiredValidator({
+                hint: "Name is required.",
+                messageSummary: "Required",
+                messageDetail: "Please enter a name."
+            }),
+            new AsyncRegExpValidator({
+                pattern: "^[A-Za-z\\s]+$",  // Use string instead of RegExp object
+                hint: "Only alphabets and spaces allowed.",
+                messageSummary: "Invalid Name",
+                messageDetail: "Name should contain only letters and spaces."
+            })
+        ]);
+
+           // Define AsyncRegExpValidator for Name (Only letters and spaces)
+           this.orgValidator = ko.observableArray([
             new RequiredValidator({
                 hint: "Name is required.",
                 messageSummary: "Required",
@@ -143,14 +159,17 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             })
         ]);
 
-        // Status Validator: Required (Dropdown Selection)
-        this.statusValidator = ko.observableArray([
-            new RequiredValidator({
-                hint: "Please select a status.",
-                messageSummary: "Required",
-                messageDetail: "Status selection is mandatory."
-            })
-        ]);
+       
+
+
+             // User Role: Required (Dropdown Selection)
+             this.roleValidator = ko.observableArray([
+                new RequiredValidator({
+                    hint: "Please select a Role.",
+                    messageSummary: "Required",
+                    messageDetail: "Role selection is mandatory."
+                })
+            ]);
 
 
 
@@ -240,8 +259,9 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             roleValue: "",
             email: "",
             mobileNo: "",
-            statusValue: "",
-            profilefileNames: ""
+            profilePic: "",
+            OrgName:"",
+            Pwd:""
         });
 
         (document.getElementById("userDialog") as any).close();
@@ -255,32 +275,66 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             roleValue: "",
             email: "",
             mobileNo: "",
-            statusValue: "",
-            profilefileNames: ""
+            profilePic: "",
+            OrgName:"",
+            Pwd:""
         });
     }
 
     // Save user action
-    saveUser(): void {
+    async saveUser(): Promise<void> {
         const name = document.getElementById("Name") as any;
         const username = document.getElementById("userName") as any;
+        const org = document.getElementById("OrgName") as any;
+
 
         const email = document.getElementById("Email") as any;
         const mobile = document.getElementById("Mobile") as any;
         const status = document.getElementById("Status") as any;
+        const pwd=document.getElementById("userPwd") as any;
+        const userRole = document.getElementById("selectRole") as any;
 
         Promise.all([
             name.validate(),
             username.validate(),
+            org.validate(),
+
             email.validate(),
             mobile.validate(),
-            status.validate()
-        ]).then((results) => {
+            userRole.validate()
+        ]).then(async (results) => {
 
             const allValid = results.every(result => result === "valid");
             if (allValid) {
                 console.log("User Data:", ko.toJS(this.userData));
-                alert("User Saved!");
+
+                this.loader(true);
+           
+                try {
+                    const response = await fetch("http://10.26.1.52:5150/create-user", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(ko.toJS(this.userData)),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                    }
+
+                    let finalResponse;
+                    try {
+                        finalResponse = await response.json();
+
+                    } catch (jsonError) {
+                        throw new Error("Invalid JSON response from server.");
+                    }
+
+
+                } catch (error) {
+                    console.error("Error sending query:", error);
+                } finally {
+                    this.loader(false);
+                }
                 // Reset form fields
                 this.resetForm()
                 // close the dialog
@@ -290,29 +344,37 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             }
         });
     }
+
+  
     selectProfileListener(files: FileList): void {
-        console.log("Files received:", files);
-
         if (files.length > 0) {
-            const fileList = Array.from(files).map((file) => file.name).join(", ");
-            console.log("Selected files:", fileList);
-
-            // Update observable correctly
-            this.userData().profilefileNames = fileList;
-            this.userData.valueHasMutated(); // Force UI update
-        } else {
-            console.log("No files selected.");
-            this.userData().profilefileNames = "No files selected.";
-            this.userData.valueHasMutated();
+            const file = files[0];
+            const reader = new FileReader();
+    
+            reader.onload = () => {
+                const dataUrl = reader.result as string;
+    
+                // Update observable to display preview
+                const currentUserData = this.userData();
+                currentUserData.profilePic = dataUrl;
+                this.userData.valueHasMutated(); // Notify knockout of deep change if userData is a plain observable
+    
+                // Optional: Send to API
+                const base64String = dataUrl.split(',')[1];
+                this.userData().profilePic=base64String;
+            };
+    
+            reader.readAsDataURL(file);
         }
     }
-
+    
 
 
     // Triggers profile file picker
     selectProfileFiles(event: ojButton.ojAction): void {
+
         pickFiles(this.selectProfileListener, { //  Use `pickFiles` instead of `FilePickerUtils.pickFiles`
-            accept: [],
+            accept: ['image/*'],  // Accept only image types
             capture: "none",
             selectionMode: "single",
         });

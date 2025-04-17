@@ -12,7 +12,7 @@
     <!-- <p>Profile Pic</p> -->
     <div class="oj-flex">
       <div
-        class="oj-flex-item oj-sm-3 oj-sm-padding-4x-horizontal oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
+        class="oj-flex-item oj-sm-4 oj-sm-padding-4x-horizontal oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
         <p>Profile Pic</p>
       </div>
     </div>
@@ -20,54 +20,66 @@
     <div class="oj-flex">
       <!-- Profile Picture Section -->
       <div
-        class="oj-flex-item oj-sm-3 oj-sm-padding-4x-horizontal oj-flex oj-sm-justify-content-center oj-sm-align-items-center">
+        class="oj-flex-item oj-sm-4 oj-sm-padding-4x-horizontal">
         <!-- <p>Profile Pic</p> -->
-        <img class="profilePic" :src="[[require.toUrl('user-component/resources/images/profile.png')]]">
+         <div class="profile-img-wrap">
+          <img class="profilePic" data-bind="attr: { src: profilePicSrc }" alt="profile">
+
         <oj-button chroming="borderless" on-oj-action="[[selectProfileFiles]]">Upload Image
 
         </oj-button>
+      </div>
         <!-- <p data-bind="text: userData().profilefileNames"></p> -->
 
       </div>
 
       <!-- Form Section -->
-      <div class="oj-flex-item oj-sm-9 oj-sm-padding-0x-vertical">
+      <div class="oj-flex-item oj-sm-8 oj-sm-padding-0x-vertical">
 
         <div class="oj-flex">
           <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end">
-            <oj-input-text class="custom-input" id="Name" autocomplete="off" value="{{userData().name}}"
+            <oj-input-text class="customFormField " id="Name" autocomplete="off" value="{{userData().name}}"
               label-hint="Name" user-assistance-density="compact" validators="[[nameValidator]]"></oj-input-text>
           </div>
 
           <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end">
-            <oj-input-text class="custom-input" id="userName" autocomplete="off" value="{{userData().username}}"
+            <oj-input-text class="customFormField " id="userName" autocomplete="off" value="{{userData().username}}"
               label-hint="User Name" user-assistance-density="compact"
               validators="[[usernameValidator]]"></oj-input-text>
           </div>
-
           <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end">
-            <oj-select-single id="selectRole" label-hint="Role" class="custom-input" data="[[roledata]]"
-              value="{{userData().roleValue}}" item-text="name" user-assistance-density="compact">
+            <oj-input-password class="customFormField" label-hint="Password"  mask-icon="visible" 
+            user-assistance-density="compact">
+          </oj-input-password>
+          </div>
+          <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end">
+            <oj-input-password  id="userPwd" class="customFormField" label-hint="Conform Password" value="{{userData().Pwd}}"  mask-icon="visible"
+              user-assistance-density="compact">
+            </oj-input-password>
+          </div>
+
+          <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end ">
+            <oj-select-single id="selectRole" label-hint="Role" class="customFormField " data="[[roledata]]"
+              value="{{userData().roleValue}}"  item-text="name" user-assistance-density="compact" required >
             </oj-select-single>
           </div>
 
           <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end">
-            <oj-input-text class="custom-input" id="Email" autocomplete="off" value="{{userData().email}}"
+            <oj-input-text class="customFormField " id="Email" autocomplete="off" value="{{userData().email}}"
               label-hint="Email" user-assistance-density="compact"
-              validators="[[emailValidator]]"></oj-input-text>
+              validators="[[emailValidator]]" ></oj-input-text>
           </div>
 
           <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end">
-            <oj-input-text class="custom-input" id="Mobile" autocomplete="off" value="{{userData().mobileNo}}"
+            <oj-input-text class="customFormField " id="Mobile" autocomplete="off" value="{{userData().mobileNo}}"
               validators="[[mobileValidator]]" label-hint="Mobile"
               user-assistance-density="compact"></oj-input-text>
           </div>
 
           <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x-vertical oj-sm-padding-4x-end statusSelect">
-            <oj-select-single id="Status" label-hint="Status" class="custom-input selectionInput"
-              data="[[dataProviderrr]]" value="{{userData().statusValue}}" validators="[[statusValidator]]"
-              item-text="name" user-assistance-density="compact" required>
-            </oj-select-single>
+     
+            <oj-input-text class="customFormField " id="OrgName" autocomplete="off" value="{{userData().OrgName}}"
+            label-hint="OrgName" user-assistance-density="compact" validators="[[orgValidator]]"></oj-input-text>
 
           </div>
 
@@ -76,7 +88,7 @@
     </div>
 
 
-    <div slot="footer">
+    <div slot="footer" class="footer-btns">
       <oj-button class="oj-button-sm saveBtn" on-oj-action="[[saveUser]]">Save</oj-button>
       <oj-button class="oj-button-sm cancelBtn" on-oj-action="[[closeUserDialog]]">Cancel</oj-button>
     </div>
