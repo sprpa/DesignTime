@@ -1284,3 +1284,30 @@ a.oj-menu-option-text-only {
 .oj-menu-item > a {
   height: 34px !important;
 }/*# sourceMappingURL=style.css.map */
+
+
+.card {
+  width: 200px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.tag {
+  background-color: #f0eaff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.draft-button {
+  background-color: #0055ff;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.view-button {
+  color: #7f56d9;
+}

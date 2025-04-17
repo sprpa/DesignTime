@@ -72,6 +72,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     keyAttribute: ko.Observable<string>;
     pushArrayName: ko.Observable<string>;
     selectedEvent: ko.Observable<string>;
+    cardData: { version: string; isDraft: boolean; }[];
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
         //At the start of your viewModel constructor
@@ -94,6 +95,12 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.pushArrayName = ko.observable("")
         this.selectedEvent = ko.observable("")
 
+        this.cardData = [
+            { version: 'v-000001', isDraft: true },
+            { version: 'v-000001', isDraft: false },
+            { version: 'v-000001', isDraft: false },
+            { version: 'v-000001', isDraft: true },
+          ];
         this.messages = ko.observableArray<{
             user: string;
             h5: string;
