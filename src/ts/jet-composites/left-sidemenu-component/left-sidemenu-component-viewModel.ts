@@ -130,7 +130,11 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
 
 
         setTimeout(() => {
-            const profileObs = this.properties.profile;
+            // const profileObs = this.properties.profile;
+            const profileObs = Object.keys(this.properties.profile).length > 0
+                ? this.properties.profile
+                : this.user_info();
+
             console.log(profileObs);
             // Subscribe to updates
             this.user_info(profileObs); // This will automatically trigger recomputation
