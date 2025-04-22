@@ -8,6 +8,18 @@ import Context = require("ojs/ojcontext");
 import Composite = require("ojs/ojcomposite");
 import ArrayDataProvider = require("ojs/ojarraydataprovider");
 
+interface UserInfo {
+    company?: string;
+    email?: string;
+    full_name?: string;
+    optimistic_user?: boolean;
+    phone_number?: string;
+    profilePic?: string;
+    status?: string;
+    user_id?: number;
+    username?: string;
+}
+
 export default class ViewModel implements Composite.ViewModel<Composite.PropertiesType> {
     busyResolve: (() => void);
     composite: Element;
@@ -20,7 +32,30 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     selectedMenuItems = ko.observable(new ojkeyset.KeySetImpl());
     isChatHistory: ko.Observable<boolean>;
 
+    user_info: ko.Observable<UserInfo>;
+    profileImageSrc: ko.PureComputed<string>;
+
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
+
+        const userData: UserInfo = JSON.parse(localStorage.getItem('userinfo') || '{}');
+
+        this.user_info = ko.observable(userData);
+
+        console.log(this.user_info());
+
+        this.profileImageSrc = ko.pureComputed(() => {
+            const pic = this.user_info().profilePic;
+            if (pic && pic.trim() !== '') {
+                // Prefix with proper Base64 MIME type
+                return `data:image/png;base64,${pic}`;
+            } else {
+                return '../../../assets/images/profile.png';
+            }
+        });
+
+
+
+
         // Busy Context for handling async operations
         const elementContext: Context = Context.getContext(context.element);
         const busyContext: Context.BusyContext = elementContext.getBusyContext();
@@ -56,7 +91,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                         bubbles: true
                     });
                     context.element.dispatchEvent(event);
-                 
+
                 }
             }
         });
@@ -76,8 +111,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.busyResolve();
     }
 
-    navigateToChat()
-    {
+    navigateToChat() {
 
         // Dispatch custom event with selected node data
         const selectionEvent = new CustomEvent("selectedvalues", {
@@ -86,13 +120,28 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         });
         this.composite.dispatchEvent(selectionEvent);
     }
-    
+
 
     /** Lifecycle Hook: Called before the component is created */
     activated(context: Composite.ViewModelContext<Composite.PropertiesType>): void { }
 
     /** Lifecycle Hook: Called when the component is attached to the DOM */
-    connected(context: Composite.ViewModelContext<Composite.PropertiesType>): void { }
+    connected(context: Composite.ViewModelContext<Composite.PropertiesType>): void {
+
+
+        setTimeout(() => {
+            const profileObs = this.properties.profile;
+            console.log(profileObs);
+            // Subscribe to updates
+            this.user_info(profileObs); // This will automatically trigger recomputation
+
+            // If profile already has value
+            console.log(this.user_info(), "pic");
+
+        }, 2000);
+
+
+    }
 
     /** Lifecycle Hook: Called after Knockout bindings are applied */
     bindingsApplied(context: Composite.ViewModelContext<Composite.PropertiesType>): void { }

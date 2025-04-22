@@ -62,9 +62,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.selectProfileListener = this.selectProfileListener.bind(this);
         this.selectProfileFiles = this.selectProfileFiles.bind(this);
         const rolesList = [
-            { id: "1", value: "Admin", name: "Admin" },
-            { id: "2", value: "Approver", name: "Approver" },
-            { id: "3", value: "Designer", name: "Designer" },
+            { id: "1", value: "creator", name: "Creator" },
         ];
 
     
@@ -208,7 +206,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
 
     onStartClick = async (): Promise<void> => {
         try {
-            const response = await fetch("http://10.26.1.52:5150/generate-login-url", {
+            const response = await fetch("http://10.26.1.52:5010/generate-login-url", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -228,7 +226,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
 
     onRegisterClick = async (): Promise<void> => {
         try {
-            const response = await fetch("http://10.26.1.52:5150/generate-login-url", {
+            const response = await fetch("http://10.26.1.52:5010/generate-login-url", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -313,7 +311,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                 this.loader(true);
            
                 try {
-                    const response = await fetch("http://10.26.1.52:5150/create-user", {
+                    const response = await fetch("http://10.26.1.52:5010/create-user", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(ko.toJS(this.userData)),

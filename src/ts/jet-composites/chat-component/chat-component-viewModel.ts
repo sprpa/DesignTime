@@ -182,7 +182,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                 bubbles: true
             });
             this.composite.dispatchEvent(selectionEvent);
-            // window.open("http://10.26.1.52:5150/", "_blank"); // open in new tab
+            // window.open("http://10.26.1.52:5010/", "_blank"); // open in new tab
 
         } else {
             console.log(param);

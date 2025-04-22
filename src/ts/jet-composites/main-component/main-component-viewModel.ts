@@ -33,7 +33,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     isMainLayoutVisible: ko.Observable<boolean>;
     userInfo = ko.observable<any>(null);
     promptEntered= ko.observable("");
-
+    profileResponse = ko.observable({});
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
         //At the start of your viewModel constructor
@@ -168,7 +168,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     // Exchanges authorization code for tokens and updates layout visibility
     getLoginAuthToken = async (code: string) => {
         try {
-            const response = await fetch(`http://10.26.1.52:5150/callback?code=${code}`, {
+            const response = await fetch(`http://10.26.1.52:5010/callback?code=${code}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -184,6 +184,8 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             if (access_token && refresh_token) {
                 localStorage.setItem("access_token", access_token);
                 localStorage.setItem("refresh_token", refresh_token);
+                localStorage.setItem("userinfo", JSON.stringify(result.user_info));
+                this.profileResponse(result.user_info); // triggers update in child component
 
                 // Now show main layo
                 this.isMainLayoutVisible(true);

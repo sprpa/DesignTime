@@ -5,7 +5,7 @@
       <oj-bind-if test="[[isSideMenuVisible()]]">
         <div style="height: 100%;">
           <div class="leftNav" data-bind="visible: isSideMenuVisible">
-            <left-sidemenu-component></left-sidemenu-component>
+            <left-sidemenu-component profile="[[profileResponse()]]"> </left-sidemenu-component>
           </div>
   
         </div>
