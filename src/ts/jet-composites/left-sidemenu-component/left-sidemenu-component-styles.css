@@ -120,8 +120,14 @@
   pointer-events: auto;
 }
 
+.logOutMenu{
+margin-left: 32px;
+margin-bottom: 4px;
+}
+
 .logOut {
   font-size: 12px;
   margin: 0;
   color: #333;
+  padding: 0px 12px;
 }

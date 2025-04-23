@@ -115,14 +115,13 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     menuActionHandler = () => {
         // Clear localStorage
         localStorage.clear();
-      
+
         // Optional: log for debugging
         console.log("Logged out, localStorage cleared");
-      
-        // Refresh the page
+        window.history.replaceState({}, document.title, window.location.pathname);
         location.reload();
-      };
-      
+    };
+
 
     navigateToChat() {
 
