@@ -20,9 +20,9 @@
   width: 100%;
 }
 
-.profileIcon img{
+.profileIcon img {
   width: 42px;
-border-radius: 24px;
+  border-radius: 24px;
 }
 
 .leftNav .custom-list-item {
@@ -88,4 +88,40 @@ border-radius: 24px;
 .leftNav .custom-list-item.oj-selected span:last-child {
   font-weight: bold !important;
   color: #000;
+}
+
+/* Logout */
+.profileWrapper {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.profileWrapper img {
+  width: 42px;
+  border-radius: 24px;
+  display: block;
+}
+
+.menuButton {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.profileWrapper:hover .menuButton {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.logOut {
+  font-size: 12px;
+  margin: 0;
+  color: #333;
 }

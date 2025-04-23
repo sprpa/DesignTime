@@ -111,6 +111,19 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.busyResolve();
     }
 
+    // Log-out menu handler
+    menuActionHandler = () => {
+        // Clear localStorage
+        localStorage.clear();
+      
+        // Optional: log for debugging
+        console.log("Logged out, localStorage cleared");
+      
+        // Refresh the page
+        location.reload();
+      };
+      
+
     navigateToChat() {
 
         // Dispatch custom event with selected node data
