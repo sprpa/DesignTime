@@ -5,6 +5,7 @@ import "ojs/ojknockout";
 import componentStrings = require("ojL10n!./resources/nls/main-component-strings");
 import Context = require("ojs/ojcontext");
 import Composite = require("ojs/ojcomposite");
+import config from "../../app-config";
 
 export default class ViewModel implements Composite.ViewModel<Composite.PropertiesType> {
     busyResolve: (() => void);
@@ -34,6 +35,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     userInfo = ko.observable<any>(null);
     promptEntered= ko.observable("");
     profileResponse = ko.observable({});
+    apiBaseUrl: string;
 
     constructor(context: Composite.ViewModelContext<Composite.PropertiesType>) {
         //At the start of your viewModel constructor
@@ -46,7 +48,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
         this.breadcrumbs = ko.observableArray();
         this.flag = ko.observableArray();
         this.selectedYaml = ko.observable();
-
+        this.apiBaseUrl = config.apiBaseUrl;
         this.isMainLayoutVisible = ko.observable(false);
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get("code");
@@ -168,7 +170,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     // Exchanges authorization code for tokens and updates layout visibility
     getLoginAuthToken = async (code: string) => {
         try {
-            const response = await fetch(`http://10.26.1.52:5010/callback?code=${code}`, {
+            const response = await fetch(`${this.apiBaseUrl}/callback?code=${code}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

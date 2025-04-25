@@ -13,6 +13,7 @@ import RequiredValidator = require('ojs/ojvalidator-required');
 import { KeySetImpl } from "ojs/ojkeyset";
 import { ojButton } from "ojs/ojbutton";
 import { pickFiles } from "ojs/ojfilepickerutils";
+import config from "../../app-config";
 
 export default class ViewModel implements Composite.ViewModel<Composite.PropertiesType> {
     busyResolve: (() => void);
@@ -20,7 +21,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     messageText: ko.Observable<string>;
     properties: Composite.PropertiesType;
     res: { [key: string]: string };
-
+    private apiBaseUrl: string;
     loader: ko.Observable<boolean>;
     userData: ko.Observable<{ name: string; username: string; roleValue: string; email: string; mobileNo: string;  profilePic: string ; OrgName:string; Pwd:string}>;
     nameValidator: ko.ObservableArray<any>;
@@ -65,7 +66,7 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
             { id: "1", value: "creator", name: "Creator" },
         ];
 
-    
+        this.apiBaseUrl = config.apiBaseUrl;
 
         this.roledata = new ArrayDataProvider(rolesList, { keyAttributes: "value" });
 
@@ -205,28 +206,8 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
     }
 
     onStartClick = async (): Promise<void> => {
-        try {
-            const response = await fetch("http://10.26.1.52:5010/generate-login-url", {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                }
-            });
-
-            const data = await response.json();
-            if (data?.result) {
-                window.location.href = data.result;
-            }
-
-        } catch (error) {
-            console.error("Login Auth Error:", error);
-        }
-    };
-
-    onRegisterClick = async (): Promise<void> => {
-        try {
-            const response = await fetch("http://10.26.1.52:5010/generate-login-url", {
+        try {   
+            const response = await fetch(`${this.apiBaseUrl}/generate-login-url`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -311,7 +292,8 @@ export default class ViewModel implements Composite.ViewModel<Composite.Properti
                 this.loader(true);
            
                 try {
-                    const response = await fetch("http://10.26.1.52:5010/create-user", {
+                    
+                    const response = await fetch(`${this.apiBaseUrl}/create-user`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(ko.toJS(this.userData)),
