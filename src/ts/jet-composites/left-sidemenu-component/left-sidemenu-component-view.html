@@ -1,38 +1,63 @@
 <div>
-
-  <div class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center sideLogo">
-    <img src="../../../assets/images/logo.jpg" data-bind="click: navigateToChat" alt="logo">
+  <div
+    class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center sideLogo"
+  >
+    <img
+      src="../../../assets/images/logo.jpg"
+      data-bind="click: navigateToChat"
+      alt="logo"
+    />
   </div>
 
-  <oj-list-view :id="[[menuListId]]" data="[[menuDataProvider]]" selection-mode="single"
-    selected="{{selectedMenuItems}}">
+  <oj-list-view
+    :id="[[menuListId]]"
+    data="[[menuDataProvider]]"
+    selection-mode="single"
+    selected="{{selectedMenuItems}}"
+  >
     <template slot="itemTemplate" data-oj-as="item">
       <li class="menu-item oj-sm-padding-1x-vertical pointer custom-list-item">
         <div class="oj-sm-align-items-center">
           <span class="menu-icon">
-            <img src="../../../assets/images/chatIcon.svg" alt="logo">
+            <img src="../../../assets/images/chatIcon.svg" alt="logo" />
           </span>
-          <span class="oj-typography-body-md1" data-bind="html: item.data.label"></span>
+          <span
+            class="oj-typography-body-md1"
+            data-bind="html: item.data.label"
+          ></span>
         </div>
       </li>
     </template>
   </oj-list-view>
 
-  <div class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center profileIcon">
-    <!-- <img src="../../../assets/images/profile.png" alt="profile"> -->
+  <div
+    class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center profileIcon"
+  >
     <div class="profileWrapper">
-      <oj-menu-button class="menuButton logOutMenu" chroming="borderless" display="icons" aria-label="Profile Menu"
-        on-oj-action="[[menuActionHandler]]">
+      <oj-menu-button
+        class="menuButton logOutMenu"
+        chroming="borderless"
+        display="icons"
+        aria-label="Profile Menu"
+        on-oj-action="[[menuActionHandler]]"
+      >
         <span slot="startIcon" class="logOut">LogOut</span>
       </oj-menu-button>
 
+      <!-- Show spinner while loading -->
+      <!-- ko if: isLoading -->
+      <div class="custom-spinner"></div>
 
-      <!-- Profile Image -->
-      <img :src="[[profileImageSrc()]]" alt="profile">
+      <!-- /ko -->
+
+      <!-- Show profile image once loading is complete -->
+      <!-- ko ifnot: isLoading -->
+      <img
+        data-bind="attr: { src: profileImageSrc }, event: { error: onImageError }"
+        alt="User Image"
+      />
+
+      <!-- /ko -->
     </div>
   </div>
-
-
-
-
 </div>
